@@ -222,7 +222,7 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#200-required-token" class="toc-h2 toc-link" data-title="200 REQUIRED TOKEN:">200 REQUIRED TOKEN:</a>
+                    <a href="#user-authenticaticity-token" class="toc-h2 toc-link" data-title="User Authenticaticity Token">User Authenticaticity Token</a>
                   </li>
               </ul>
           </li>
@@ -262,6 +262,14 @@
               </ul>
           </li>
           <li>
+            <a href="#order" class="toc-h1 toc-link" data-title="Order">Order</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-order" class="toc-h2 toc-link" data-title="Get Order">Get Order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -276,7 +284,7 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Stockstotade API! You can use our API to access STT API endpoints, which can get information on users, subscriptions in our database.</p>
-<h1 id='authentication'>Authentication</h1>
+<h1 id='authentication'>Authentication</h1><h2 id='user-authenticaticity-token'>User Authenticaticity Token</h2>
 <blockquote>
 <p>without/incorrect authenticity token, user will receive following response:</p>
 <h3 id='200-required-token'>200 REQUIRED TOKEN:</h3>
@@ -440,6 +448,18 @@ This API does not require authenticity token
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://domain.com//api/users</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recurly_plan_code</td>
+<td>query user with recurly_plan_code</td>
+</tr>
+</tbody></table>
 <h2 id='update-password'>Update Password</h2>
 <blockquote>
 <h3 id='200-success-response-3'>200 SUCCESS RESPONSE:</h3>
@@ -760,6 +780,65 @@ This API does not require authenticity token
 <tr>
 <td>json data for question and answer</td>
 <td>question and answer data in body in json format</td>
+</tr>
+</tbody></table>
+<h1 id='order'>Order</h1>
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+<h2 id='get-order'>Get Order</h2>
+<blockquote>
+<h3 id='200-success-response-10'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product_id_1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"subscription_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscription_uid"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"recurly_plan_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recurly_plan_code"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"line_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line_description"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"price_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price_description"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"investimonial_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investimonial_id"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product_id_1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"subscription_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscription_uid"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"recurly_plan_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recurly_plan_code"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"line_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line_description"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"price_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price_description"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"investimonial_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investimonial_id"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='404-not-found'>404 - NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unable to find resource"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get order by email</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/orders/:email</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>Query email</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
