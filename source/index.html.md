@@ -19,6 +19,7 @@ search: true
 Welcome to the Stockstotade API! You can use our API to access STT API endpoints, which can get information on users, subscriptions in our database.
 
 # Authentication
+## User Authenticaticity Token
 > 
 without/incorrect authenticity token, user will receive following response:
 ### 200 REQUIRED TOKEN:
@@ -193,6 +194,9 @@ password (required) | User password
 ### HTTP Request
 `GET http://domain.com//api/users`
 
+Parameter  | Description
+--------- | -----------
+recurly_plan_code | query user with recurly_plan_code 
 
 ## Update Password
 >
@@ -460,3 +464,61 @@ Update user Profile
 Parameter  | Description
 --------- | -----------
 json data for question and answer| question and answer data in body in json format
+
+# Order
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+
+## Get Order
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+  [
+      {
+          "product_id": "product_id_1",
+          "email": "email",
+          "subscription_uid": "subscription_uid",
+          "product": {
+              "name": "name",
+              "recurly_plan_code": "recurly_plan_code",
+              "line_description": "line_description",
+              "price_description": "price_description",
+              "investimonial_id": "investimonial_id"
+          }
+      },
+      {
+          "product_id": "product_id_1",
+          "email": "email",
+          "subscription_uid": "subscription_uid",
+          "product": {
+              "name": "name",
+              "recurly_plan_code": "recurly_plan_code",
+              "line_description": "line_description",
+              "price_description": "price_description",
+              "investimonial_id": "investimonial_id"
+          }
+      }, ...
+  ]
+```
+>
+### 404 - NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "message": "Unable to find resource"
+}
+```
+
+Get order by email
+### HTTP Request
+`GET http://domain.com/api/orders/:email`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+email| Query email
+
