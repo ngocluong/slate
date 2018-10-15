@@ -478,27 +478,27 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
   [
       {
-          "product_id": "product_id_1",
-          "email": "email",
-          "subscription_uid": "subscription_uid",
+          "product_id": [product_id_1],
+          "email": [email],
+          "subscription_uid": [subscription_uid],
           "product": {
-              "name": "name",
-              "recurly_plan_code": "recurly_plan_code",
-              "line_description": "line_description",
-              "price_description": "price_description",
-              "investimonial_id": "investimonial_id"
+              "name": [name],
+              "recurly_plan_code": [recurly_plan_code],
+              "line_description": [line_description],
+              "price_description": [price_description],
+              "investimonial_id": [investimonial_id]
           }
       },
       {
-          "product_id": "product_id_1",
-          "email": "email",
-          "subscription_uid": "subscription_uid",
+          "product_id": [product_id_2],
+          "email": [email],
+          "subscription_uid": [subscription_uid],
           "product": {
-              "name": "name",
-              "recurly_plan_code": "recurly_plan_code",
-              "line_description": "line_description",
-              "price_description": "price_description",
-              "investimonial_id": "investimonial_id"
+              "name": [name],
+              "recurly_plan_code": [recurly_plan_code],
+              "line_description": [line_description],
+              "price_description": [price_description],
+              "investimonial_id": [investimonial_id]
           }
       }, ...
   ]
@@ -522,3 +522,85 @@ Parameter  | Description
 --------- | -----------
 email| Query email
 
+# System Message
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+
+## Get system message
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+    "success": true,
+    "messages": [
+        {
+            "id": [id (int)],
+            "subject": [subject 1],
+            "body": [body 1],
+            "publish_date": [publish_date],
+            "message_type": [message_type],
+            "priority": [priority (int)],
+            "created_at": [created_at],
+            "updated_at": [updated_at],
+            "valid_until": [valid_until],
+            "status": [status (unread/read)]
+        },
+        {
+            "id": [id (int)],
+            "subject": [subject 1],
+            "body": [body 1],
+            "publish_date": [publish_date],
+            "message_type": [message_type],
+            "priority": [priority (int)],
+            "created_at": [created_at],
+            "updated_at": [updated_at],
+            "valid_until": [valid_until],
+            "status": [status (unread/read)]
+        }
+    ]
+}
+```
+
+Get system messages
+### HTTP Request
+`GET http://domain.com/api/system_messages`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+from_id| If present - Get messages which has id greater than `from_id`
+from_time| If present - Get all messages update later than `from_time`
+unread_only| If present - Get all message that user has not read
+
+## Read Message
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true
+}
+```
+>
+### 200 - NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Cannot find message with id [id]"
+}
+```
+
+Read system message
+### HTTP Request
+`POST http://domain.com/api/system_messages/:id/read`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+id (required) | Message ID. Set param to `all` in order to read all unread messages  
