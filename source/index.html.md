@@ -731,6 +731,16 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
+### 200 - INVALID MD5 TOKEN
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid token"
+}
+```
+>
 ### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
@@ -750,6 +760,7 @@ Parameter  | Description
 --------- | -----------
 user_email (required) | Email of connected user
 user_ip (required) | User's ip address
+token (required) | MD5 of date
 event_details | Note for activity log
 
 ## Disconnected
@@ -774,6 +785,16 @@ event_details | Note for activity log
 }
 ```
 >
+### 200 - INVALID MD5 TOKEN
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid token"
+}
+```
+>
 ### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
@@ -793,6 +814,7 @@ Parameter  | Description
 --------- | -----------
 user_email (required) | Email of disconnected user
 user_ip (required) | User's ip address
+token (required) | MD5 of date
 event_details | Note for activity log
 
 ## Subscribed
@@ -817,6 +839,16 @@ event_details | Note for activity log
 }
 ```
 >
+### 200 - INVALID MD5 TOKEN
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid token"
+}
+```
+>
 ### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
@@ -836,6 +868,7 @@ Parameter  | Description
 --------- | -----------
 user_email (required) | Email of subscribed user
 user_ip (required) | User's ip address
+token (required) | MD5 of date
 event_details | Note for activity log
 
 ## Unsubscribed
@@ -860,6 +893,16 @@ event_details | Note for activity log
 }
 ```
 >
+### 200 - INVALID MD5 TOKEN
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid token"
+}
+```
+>
 ### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
@@ -879,5 +922,62 @@ Parameter  | Description
 --------- | -----------
 user_email (required) | Email of unsubscribed user
 user_ip (required) | User's ip address
+token (required) | MD5 of date
 event_details | Note for activity log
 
+# TOS Agreement
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+
+## Sign TOS
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": "Signed TOS successfully"
+}
+```
+>
+### 200 - PARAMS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Error message"
+}
+```
+>
+### 200 - INVALID MD5 TOKEN
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid token"
+}
+```
+>
+### 200 - USER NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Email address was not found"
+}
+```
+
+Sign TOS Agreement
+### HTTP Request
+`PUT http://domain.com/api/user_tos/signed`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+user_email (required) | Email of user sign TOS  
+token (required) | MD5 of date  
