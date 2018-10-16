@@ -702,3 +702,182 @@ Nyse Entry Json Key |
 "nyse_agreed"|
 "otc_agreed"|
 "signature_agreed"|
+
+
+# Activity Log
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+
+## Connected
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": "User Activity Log added."
+}
+```
+>
+### 200 - PARAMS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Error message"
+}
+```
+>
+### 200 - USER NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Email address was not found"
+}
+```
+
+Add user activity log when connected
+### HTTP Request
+`POST http://domain.com/user_activity_logs/connected`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+user_email (required) | Email of connected user
+user_ip (required) | User's ip address
+event_details | Note for activity log
+
+## Disconnected
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": "User Activity Log added."
+}
+```
+>
+### 200 - PARAMS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Error message"
+}
+```
+>
+### 200 - USER NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Email address was not found"
+}
+```
+
+Add user activity log when disconnected
+### HTTP Request
+`POST http://domain.com/user_activity_logs/disconnected`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+user_email (required) | Email of disconnected user
+user_ip (required) | User's ip address
+event_details | Note for activity log
+
+## Subscribed
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": "User Activity Log added."
+}
+```
+>
+### 200 - PARAMS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Error message"
+}
+```
+>
+### 200 - USER NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Email address was not found"
+}
+```
+
+Add user activity log when subscribed
+### HTTP Request
+`POST http://domain.com/user_activity_logs/subscribed`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+user_email (required) | Email of subscribed user
+user_ip (required) | User's ip address
+event_details | Note for activity log
+
+## Unsubscribed
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": "User Activity Log added."
+}
+```
+>
+### 200 - PARAMS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Error message"
+}
+```
+>
+### 200 - USER NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Email address was not found"
+}
+```
+
+Add user activity log when unsubscribed
+### HTTP Request
+`POST http://domain.com/user_activity_logs/unsubscribed`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+user_email (required) | Email of unsubscribed user
+user_ip (required) | User's ip address
+event_details | Note for activity log
+
