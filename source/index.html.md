@@ -604,3 +604,101 @@ Read system message
 Parameter  | Description
 --------- | -----------
 id (required) | Message ID. Set param to `all` in order to read all unread messages  
+
+# Nyse Entry
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+
+## Update Nyse Entry
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true
+}
+```
+>
+### 200 - NYSE ENTRY IS COMPLETE ALREADY
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "User's nyse entry is completed"
+}
+```
+>
+### 200 - INVALID NYSE TOKEN
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid nyse token"
+}
+```
+>
+### 200 - PARAMS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Error message"
+}
+```
+
+sign Market Agreement
+### HTTP Request
+`PUT http://domain.com/api/nyse_entries/:id`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+id (required) | Nyse Entry ID  
+nyse_entry | Json params for nyse entry
+
+
+Nyse Entry Json Key |
+-------------- | 
+"name_of_vendor"| 
+"section1_agreed"|
+"section2_12_a"|
+"section2_12_b"|
+"section2_12_c"|
+"section2_12_d"|
+"section2_12_e"|
+"section2_12_f"|
+"section2_12_g"|
+"section2_12_h"|
+"section2_12_i"|
+"section2_12_j"|
+"section2_12_k"|
+"section2_12_certificated"|
+"section2_agreed"|
+"nasdaq_agreed"|
+"is_non_pro"|
+"personal_first_name"|
+"personal_last_name"|
+"personal_middle_name"|
+"personal_address"|
+"personal_city"|
+"personal_state"|
+"personal_country"|
+"personal_zip"|
+"personal_email"|
+"employer_occupations"|
+"employer_retiree_name"|
+"employer_retiree_address"|
+"employer_retiree_city"|
+"employer_retiree_state_prov"|
+"employer_retiree_country"|
+"employer_retiree_zip"|
+"employer_title"|
+"employer_functions"|
+"nyse_agreed"|
+"otc_agreed"|
+"signature_agreed"|
