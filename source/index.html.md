@@ -192,11 +192,44 @@ password (required) | User password
 ```
 
 ### HTTP Request
-`GET http://domain.com//api/users`
+`GET http://domain.com/api/users`
 
 Parameter  | Description
 --------- | -----------
 recurly_plan_code | query user with recurly_plan_code 
+
+## Get profile pictures
+<aside class="success">
+THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**<br/>
+
+```json
+{ 
+  "success": true,
+  "data": [
+     {
+       "nickname": [user_nickname_1],
+       "profile_picture": [picture_url_1]
+     },
+     {
+       "nickname": [user_nickname_2],
+       "profile_picture": [picture_url_2]
+     }
+  ]
+}
+```
+
+Get user profile pictures by nicknames
+### HTTP Request
+`GET http://domain.com/api/user_profile_pictures`
+
+Parameter  | Description
+--------- | -----------
+nicknames | nicknames for query users, separate by `,`. For example: `user_nickname_1, user_nickname_2`  
 
 ## Update Password
 >
