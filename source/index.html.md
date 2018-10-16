@@ -1267,3 +1267,57 @@ Order Json Key |
 "tos_agreement" |
 "coupon_code" |
 "addon_code" |
+
+# External Account
+## Add external account
+<aside class="success">
+THIS API NOT REQUEST AUTHENTICITY TOKEN 
+</aside>
+
+>
+### 201 SUCCESS RESPONSE: 
+**RESPONSE BODY:**
+
+```json
+{ 
+  "success": true
+}
+```
+>
+### 500 - Internal server error
+**RESPONSE BODY:**
+
+```json
+{ 
+  "error": "Error message" 
+}
+```
+>
+### 400 - Error when create user
+**RESPONSE BODY:**
+
+```json
+{ 
+  "error": "Error message" 
+}
+```
+
+Order new subscription
+### HTTP Request
+`POST http://domain.com/api/external_api/accounts`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+first_name | first name 
+last_name | last name 
+email | email 
+address_line_1 | address line 1 
+address_line_2 | address line 2 
+country | country 
+state | state 
+city | city 
+zip_code | zip code 
+phone | phone 
+external_offer_code | affiliate external offer code 
+api_key | affiliate api key   
