@@ -236,6 +236,9 @@
                     <a href="#get-all-user-emails" class="toc-h2 toc-link" data-title="Get all user emails">Get all user emails</a>
                   </li>
                   <li>
+                    <a href="#get-profile-pictures" class="toc-h2 toc-link" data-title="Get profile pictures">Get profile pictures</a>
+                  </li>
+                  <li>
                     <a href="#update-password" class="toc-h2 toc-link" data-title="Update Password">Update Password</a>
                   </li>
                   <li>
@@ -266,6 +269,75 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-order" class="toc-h2 toc-link" data-title="Get Order">Get Order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#system-message" class="toc-h1 toc-link" data-title="System Message">System Message</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-system-message" class="toc-h2 toc-link" data-title="Get system message">Get system message</a>
+                  </li>
+                  <li>
+                    <a href="#read-message" class="toc-h2 toc-link" data-title="Read Message">Read Message</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#nyse-entry" class="toc-h1 toc-link" data-title="Nyse Entry">Nyse Entry</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-nyse-entry" class="toc-h2 toc-link" data-title="Update Nyse Entry">Update Nyse Entry</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#activity-log" class="toc-h1 toc-link" data-title="Activity Log">Activity Log</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#connected" class="toc-h2 toc-link" data-title="Connected">Connected</a>
+                  </li>
+                  <li>
+                    <a href="#disconnected" class="toc-h2 toc-link" data-title="Disconnected">Disconnected</a>
+                  </li>
+                  <li>
+                    <a href="#subscribed" class="toc-h2 toc-link" data-title="Subscribed">Subscribed</a>
+                  </li>
+                  <li>
+                    <a href="#unsubscribed" class="toc-h2 toc-link" data-title="Unsubscribed">Unsubscribed</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tos-agreement" class="toc-h1 toc-link" data-title="TOS Agreement">TOS Agreement</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sign-tos" class="toc-h2 toc-link" data-title="Sign TOS">Sign TOS</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#subscription" class="toc-h1 toc-link" data-title="Subscription">Subscription</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user-subscriptions" class="toc-h2 toc-link" data-title="Get User Subscriptions">Get User Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#get-subscription-addons" class="toc-h2 toc-link" data-title="Get Subscription Addons">Get Subscription Addons</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-user-subscriptions" class="toc-h2 toc-link" data-title="Cancel User Subscriptions">Cancel User Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#add-subscription" class="toc-h2 toc-link" data-title="Add subscription">Add subscription</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#external-account" class="toc-h1 toc-link" data-title="External Account">External Account</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-external-account" class="toc-h2 toc-link" data-title="Add external account">Add external account</a>
                   </li>
               </ul>
           </li>
@@ -447,7 +519,7 @@ This API does not require authenticity token
   </span><span class="s2">"user2@email.com"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://domain.com//api/users</code></p>
+<p><code>GET http://domain.com/api/users</code></p>
 
 <table><thead>
 <tr>
@@ -460,9 +532,47 @@ This API does not require authenticity token
 <td>query user with recurly_plan_code</td>
 </tr>
 </tbody></table>
-<h2 id='update-password'>Update Password</h2>
+<h2 id='get-profile-pictures'>Get profile pictures</h2>
+<aside class="success">
+THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+
 <blockquote>
 <h3 id='200-success-response-3'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong><br/></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_nickname_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+       </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">picture_url_</span><span class="mi">1</span><span class="p">]</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_nickname_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+       </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">picture_url_</span><span class="mi">2</span><span class="p">]</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get user profile pictures by nicknames</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/user_profile_pictures</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>nicknames</td>
+<td>nicknames for query users, separate by <code>,</code>. For example: <code>user_nickname_1, user_nickname_2</code></td>
+</tr>
+</tbody></table>
+<h2 id='update-password'>Update Password</h2>
+<blockquote>
+<h3 id='200-success-response-4'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -480,7 +590,7 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user password</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users/password</code></p>
 <h3 id='body-parameters-2'>Body Parameters</h3>
 <table><thead>
@@ -504,7 +614,7 @@ This API does not require authenticity token
 </tbody></table>
 <h2 id='update-avatar'>Update Avatar</h2>
 <blockquote>
-<h3 id='200-success-response-4'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-5'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -513,7 +623,7 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user Avatar</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/users/avatar</code></p>
 <h3 id='body-parameters-3'>Body Parameters</h3>
 <table><thead>
@@ -529,7 +639,7 @@ This API does not require authenticity token
 </tbody></table>
 <h2 id='get-user-setting'>Get User Setting</h2>
 <blockquote>
-<h3 id='200-success-response-5'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-6'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"User setting file content."</span><span class="w">
@@ -544,11 +654,11 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user setting file</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/setting</code></p>
 <h2 id='update-user-setting'>Update User Setting</h2>
 <blockquote>
-<h3 id='200-success-response-6'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-7'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -575,7 +685,7 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user setting file</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/users/update_setting</code></p>
 <h3 id='body-parameters-4'>Body Parameters</h3>
 <table><thead>
@@ -595,7 +705,7 @@ This API does not require authenticity token
 </tbody></table>
 <h2 id='update-user-profile-picture'>Update User Profile Picture</h2>
 <blockquote>
-<h3 id='200-success-response-7'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-8'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -613,7 +723,7 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user Profile picture</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/users/update_profile_picture</code></p>
 <h3 id='body-parameters-5'>Body Parameters</h3>
 <table><thead>
@@ -629,7 +739,7 @@ This API does not require authenticity token
 </tbody></table>
 <h2 id='get-user-profile'>Get User Profile</h2>
 <blockquote>
-<h3 id='200-success-response-8'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-9'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong><br/></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -656,11 +766,11 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get user profile</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/profile</code></p>
 <h2 id='update-user-profile'>Update User Profile</h2>
 <blockquote>
-<h3 id='200-success-response-9'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-10'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -687,7 +797,7 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user Profile</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users</code></p>
 <h3 id='body-parameters-6'>Body Parameters</h3>
 <table><thead>
@@ -768,7 +878,7 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user Profile</p>
-<h3 id='http-request-10'>HTTP Request</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users/security_question</code></p>
 <h3 id='body-parameters-7'>Body Parameters</h3>
 <table><thead>
@@ -788,32 +898,32 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='get-order'>Get Order</h2>
 <blockquote>
-<h3 id='200-success-response-10'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-11'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product_id_1"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"subscription_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscription_uid"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">product_id_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">email</span><span class="p">],</span><span class="w">
+          </span><span class="s2">"subscription_uid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription_uid</span><span class="p">],</span><span class="w">
           </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"recurly_plan_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recurly_plan_code"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"line_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line_description"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"price_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price_description"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"investimonial_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investimonial_id"</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">name</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"recurly_plan_code"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">recurly_plan_code</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"line_description"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">line_description</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"price_description"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">price_description</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"investimonial_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">investimonial_id</span><span class="p">]</span><span class="w">
           </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product_id_1"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"subscription_uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscription_uid"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">product_id_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">email</span><span class="p">],</span><span class="w">
+          </span><span class="s2">"subscription_uid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription_uid</span><span class="p">],</span><span class="w">
           </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"recurly_plan_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recurly_plan_code"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"line_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line_description"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"price_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price_description"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"investimonial_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"investimonial_id"</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">name</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"recurly_plan_code"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">recurly_plan_code</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"line_description"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">line_description</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"price_description"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">price_description</span><span class="p">],</span><span class="w">
+              </span><span class="s2">"investimonial_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">investimonial_id</span><span class="p">]</span><span class="w">
           </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -827,7 +937,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get order by email</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/orders/:email</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
@@ -839,6 +949,989 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 <tr>
 <td>email</td>
 <td>Query email</td>
+</tr>
+</tbody></table>
+<h1 id='system-message'>System Message</h1>
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+<h2 id='get-system-message'>Get system message</h2>
+<blockquote>
+<h3 id='200-success-response-12'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">id</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subject</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">body</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"publish_date"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">publish_date</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"message_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">message_type</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">priority</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">created_at</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">updated_at</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"valid_until"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">valid_until</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">status</span><span class="w"> </span><span class="err">(unread/read)</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">id</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subject</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">body</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"publish_date"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">publish_date</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"message_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">message_type</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">priority</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">created_at</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">updated_at</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"valid_until"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">valid_until</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">status</span><span class="w"> </span><span class="err">(unread/read)</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get system messages</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/system_messages</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from_id</td>
+<td>If present - Get messages which has id greater than <code>from_id</code></td>
+</tr>
+<tr>
+<td>from_time</td>
+<td>If present - Get all messages update later than <code>from_time</code></td>
+</tr>
+<tr>
+<td>unread_only</td>
+<td>If present - Get all message that user has not read</td>
+</tr>
+</tbody></table>
+<h2 id='read-message'>Read Message</h2>
+<blockquote>
+<h3 id='200-success-response-13'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-not-found'>200 - NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cannot find message with id [id]"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Read system message</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST http://domain.com/api/system_messages/:id/read</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id (required)</td>
+<td>Message ID. Set param to <code>all</code> in order to read all unread messages</td>
+</tr>
+</tbody></table>
+<h1 id='nyse-entry'>Nyse Entry</h1>
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+<h2 id='update-nyse-entry'>Update Nyse Entry</h2>
+<blockquote>
+<h3 id='200-success-response-14'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-nyse-entry-is-complete-already'>200 - NYSE ENTRY IS COMPLETE ALREADY</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User's nyse entry is completed"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-nyse-token'>200 - INVALID NYSE TOKEN</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid nyse token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-params-invalid'>200 - PARAMS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>sign Market Agreement</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>PUT http://domain.com/api/nyse_entries/:id</code></p>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id (required)</td>
+<td>Nyse Entry ID</td>
+</tr>
+<tr>
+<td>nyse_entry</td>
+<td>Json params for nyse entry</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Nyse Entry Json Key</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;name_of_vendor&quot;</td>
+</tr>
+<tr>
+<td>&quot;section1_agreed&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_a&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_b&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_c&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_d&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_e&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_f&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_g&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_h&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_i&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_j&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_k&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_12_certificated&quot;</td>
+</tr>
+<tr>
+<td>&quot;section2_agreed&quot;</td>
+</tr>
+<tr>
+<td>&quot;nasdaq_agreed&quot;</td>
+</tr>
+<tr>
+<td>&quot;is_non_pro&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_first_name&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_last_name&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_middle_name&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_address&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_city&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_state&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_country&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_zip&quot;</td>
+</tr>
+<tr>
+<td>&quot;personal_email&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_occupations&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_retiree_name&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_retiree_address&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_retiree_city&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_retiree_state_prov&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_retiree_country&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_retiree_zip&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_title&quot;</td>
+</tr>
+<tr>
+<td>&quot;employer_functions&quot;</td>
+</tr>
+<tr>
+<td>&quot;nyse_agreed&quot;</td>
+</tr>
+<tr>
+<td>&quot;otc_agreed&quot;</td>
+</tr>
+<tr>
+<td>&quot;signature_agreed&quot;</td>
+</tr>
+</tbody></table>
+<h1 id='activity-log'>Activity Log</h1>
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+<h2 id='connected'>Connected</h2>
+<blockquote>
+<h3 id='200-success-response-15'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Activity Log added."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-params-invalid-2'>200 - PARAMS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-md5-token'>200 - INVALID MD5 TOKEN</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-user-not-found'>200 - USER NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email address was not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add user activity log when connected</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>POST http://domain.com/user_activity_logs/connected</code></p>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_email (required)</td>
+<td>Email of connected user</td>
+</tr>
+<tr>
+<td>user_ip (required)</td>
+<td>User&#39;s ip address</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
+</tr>
+<tr>
+<td>event_details</td>
+<td>Note for activity log</td>
+</tr>
+</tbody></table>
+<h2 id='disconnected'>Disconnected</h2>
+<blockquote>
+<h3 id='200-success-response-16'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Activity Log added."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-params-invalid-3'>200 - PARAMS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-md5-token-2'>200 - INVALID MD5 TOKEN</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-user-not-found-2'>200 - USER NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email address was not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add user activity log when disconnected</p>
+<h3 id='http-request-17'>HTTP Request</h3>
+<p><code>POST http://domain.com/user_activity_logs/disconnected</code></p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_email (required)</td>
+<td>Email of disconnected user</td>
+</tr>
+<tr>
+<td>user_ip (required)</td>
+<td>User&#39;s ip address</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
+</tr>
+<tr>
+<td>event_details</td>
+<td>Note for activity log</td>
+</tr>
+</tbody></table>
+<h2 id='subscribed'>Subscribed</h2>
+<blockquote>
+<h3 id='200-success-response-17'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Activity Log added."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-params-invalid-4'>200 - PARAMS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-md5-token-3'>200 - INVALID MD5 TOKEN</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-user-not-found-3'>200 - USER NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email address was not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add user activity log when subscribed</p>
+<h3 id='http-request-18'>HTTP Request</h3>
+<p><code>POST http://domain.com/user_activity_logs/subscribed</code></p>
+<h3 id='parameters-7'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_email (required)</td>
+<td>Email of subscribed user</td>
+</tr>
+<tr>
+<td>user_ip (required)</td>
+<td>User&#39;s ip address</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
+</tr>
+<tr>
+<td>event_details</td>
+<td>Note for activity log</td>
+</tr>
+</tbody></table>
+<h2 id='unsubscribed'>Unsubscribed</h2>
+<blockquote>
+<h3 id='200-success-response-18'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Activity Log added."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-params-invalid-5'>200 - PARAMS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-md5-token-4'>200 - INVALID MD5 TOKEN</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-user-not-found-4'>200 - USER NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email address was not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add user activity log when unsubscribed</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>POST http://domain.com/user_activity_logs/unsubscribed</code></p>
+<h3 id='parameters-8'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_email (required)</td>
+<td>Email of unsubscribed user</td>
+</tr>
+<tr>
+<td>user_ip (required)</td>
+<td>User&#39;s ip address</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
+</tr>
+<tr>
+<td>event_details</td>
+<td>Note for activity log</td>
+</tr>
+</tbody></table>
+<h1 id='tos-agreement'>TOS Agreement</h1>
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+<h2 id='sign-tos'>Sign TOS</h2>
+<blockquote>
+<h3 id='200-success-response-19'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signed TOS successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-params-invalid-6'>200 - PARAMS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-md5-token-5'>200 - INVALID MD5 TOKEN</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-user-not-found-5'>200 - USER NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email address was not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Sign TOS Agreement</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>PUT http://domain.com/api/user_tos/signed</code></p>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_email (required)</td>
+<td>Email of user sign TOS</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
+</tr>
+</tbody></table>
+<h1 id='subscription'>Subscription</h1>
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+<h2 id='get-user-subscriptions'>Get User Subscriptions</h2>
+<blockquote>
+<h3 id='200-success-response-20'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">plan_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">uuid_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">state_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">invoice_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">account_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"unit_amount_in_cents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">unit_amount_in_cents_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">quantity_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">currency_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"activated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">activated_at_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"canceled_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">canceled_at_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">expires_at_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"current_period_started_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">current_period_started_at_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"current_period_ends_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">current_period_ends_at_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"trial_started_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">trial_started_at_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"trial_ends_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">trial_ends_at_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_in_cents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_in_cents_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_type_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_region"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_region_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_rate_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"po_number"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">po_number_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"net_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">net_terms_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"collection_method"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">collection_method_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"subscription_add_ons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">subscription_add_ons_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"pending_subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">pending_subscription_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"terms_and_conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">terms_and_conditions_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"customer_notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">customer_notes_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"bank_account_authorized_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">bank_account_authorized_at_</span><span class="mi">1</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">plan_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">uuid_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">state_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">invoice_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">account_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"unit_amount_in_cents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">unit_amount_in_cents_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">quantity_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">currency_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"activated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">activated_at_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"canceled_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">canceled_at_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">expires_at_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"current_period_started_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">current_period_started_at_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"current_period_ends_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">current_period_ends_at_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"trial_started_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">trial_started_at_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"trial_ends_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">trial_ends_at_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_in_cents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_in_cents_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_type_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_region"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_region_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">tax_rate_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"po_number"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">po_number_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"net_terms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">net_terms_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"collection_method"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">collection_method_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"subscription_add_ons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">subscription_add_ons_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"pending_subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">pending_subscription_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"terms_and_conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">terms_and_conditions_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"customer_notes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">customer_notes_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"bank_account_authorized_at"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="w"> </span><span class="err">bank_account_authorized_at_</span><span class="mi">2</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-plan-code'>200 - INVALID PLAN CODE</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid recurly plan code"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-plan-code-not-found'>200 - PLAN CODE NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No product found with input plan code"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get user subscriptions</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/subscriptions</code></p>
+<h3 id='parameters-10'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recurly_plan_code (required)</td>
+<td>Plan code associated with Product</td>
+</tr>
+</tbody></table>
+<h2 id='get-subscription-addons'>Get Subscription Addons</h2>
+<blockquote>
+<h3 id='200-success-response-21'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">href_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">uri_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"destroyed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">destroyed</span><span class="w"> </span><span class="err">(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"new_record"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">new_record</span><span class="w"> </span><span class="err">(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"add_on_code"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">add_on_code</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"add_on_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">add_on_type</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"unit_amount_in_cents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">unit_amount_in_cents</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">quantity</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"changed_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">href_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">uri_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"destroyed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">destroyed</span><span class="w"> </span><span class="err">(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"new_record"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">new_record</span><span class="w"> </span><span class="err">(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"add_on_code"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">add_on_code</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"add_on_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">add_on_type</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"unit_amount_in_cents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">unit_amount_in_cents</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">quantity</span><span class="w"> </span><span class="err">(int)</span><span class="p">],</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"changed_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">subscription</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='500-error'>500 - ERROR</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"Error"</span><span class="w"> 
+</span></code></pre>
+<p>Get user subscriptions</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/subscriptions/active_add_ons</code></p>
+<h2 id='cancel-user-subscriptions'>Cancel User Subscriptions</h2>
+<blockquote>
+<h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-uuid'>200 - INVALID UUID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid uuid"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-subscription-not-found'>200 - SUBSCRIPTION NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription not found with input uuid"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get user subscriptions</p>
+<h3 id='http-request-23'>HTTP Request</h3>
+<p><code>PUT http://domain.com/api/subscriptions/cancel</code></p>
+<h3 id='parameters-11'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>uuid (required)</td>
+<td>Subscription&#39;s uuid</td>
+</tr>
+</tbody></table>
+<h2 id='add-subscription'>Add subscription</h2>
+<aside class="success">
+THIS API NOT REQUEST AUTHENTICITY TOKEN 
+</aside>
+
+<blockquote>
+<h3 id='200-success-response-23'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success:[account_code]"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-error'>200 - Error</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Order new subscription</p>
+<h3 id='http-request-24'>HTTP Request</h3>
+<p><code>POST http://domain.com/api/subscription_orders</code></p>
+<h3 id='parameters-12'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order (required)</td>
+<td>Json params for order</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Order Json Key</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;email&quot;</td>
+</tr>
+<tr>
+<td>&quot;confirm_email&quot;</td>
+</tr>
+<tr>
+<td>&quot;first_name&quot;</td>
+</tr>
+<tr>
+<td>&quot;last_name&quot;</td>
+</tr>
+<tr>
+<td>&quot;billing_info&quot;</td>
+</tr>
+<tr>
+<td>&quot;number&quot;</td>
+</tr>
+<tr>
+<td>&quot;month&quot;</td>
+</tr>
+<tr>
+<td>&quot;year&quot;</td>
+</tr>
+<tr>
+<td>&quot;phone&quot;</td>
+</tr>
+<tr>
+<td>&quot;address_line_1&quot;</td>
+</tr>
+<tr>
+<td>&quot;address_line_2&quot;</td>
+</tr>
+<tr>
+<td>&quot;city&quot;</td>
+</tr>
+<tr>
+<td>&quot;country&quot;</td>
+</tr>
+<tr>
+<td>&quot;state&quot;</td>
+</tr>
+<tr>
+<td>&quot;zip_code&quot;</td>
+</tr>
+<tr>
+<td>&quot;recurly_token&quot;</td>
+</tr>
+<tr>
+<td>&quot;recurly_plan_code&quot;</td>
+</tr>
+<tr>
+<td>&quot;aff_code&quot;</td>
+</tr>
+<tr>
+<td>&quot;tos_agreement&quot;</td>
+</tr>
+<tr>
+<td>&quot;coupon_code&quot;</td>
+</tr>
+<tr>
+<td>&quot;addon_code&quot;</td>
+</tr>
+</tbody></table>
+<h1 id='external-account'>External Account</h1><h2 id='add-external-account'>Add external account</h2>
+<aside class="success">
+THIS API NOT REQUEST AUTHENTICITY TOKEN 
+</aside>
+
+<blockquote>
+<h3 id='201-success-response-2'>201 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='500-internal-server-error'>500 - Internal server error</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='400-error-when-create-user'>400 - Error when create user</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Order new subscription</p>
+<h3 id='http-request-25'>HTTP Request</h3>
+<p><code>POST http://domain.com/api/external_api/accounts</code></p>
+<h3 id='parameters-13'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name</td>
+<td>first name</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>last name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+</tr>
+<tr>
+<td>address_line_1</td>
+<td>address line 1</td>
+</tr>
+<tr>
+<td>address_line_2</td>
+<td>address line 2</td>
+</tr>
+<tr>
+<td>country</td>
+<td>country</td>
+</tr>
+<tr>
+<td>state</td>
+<td>state</td>
+</tr>
+<tr>
+<td>city</td>
+<td>city</td>
+</tr>
+<tr>
+<td>zip_code</td>
+<td>zip code</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>phone</td>
+</tr>
+<tr>
+<td>external_offer_code</td>
+<td>affiliate external offer code</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>affiliate api key</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
