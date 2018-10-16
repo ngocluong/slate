@@ -1014,3 +1014,197 @@ Parameter  | Description
 --------- | -----------
 user_email (required) | Email of user sign TOS  
 token (required) | MD5 of date  
+
+
+# Subscription
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+
+## Get User Subscriptions
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+[
+  {
+    "plan": [subscription plan_1],
+    "uuid": [subscription uuid_1],
+    "state": [subscription state_1],
+    "invoice": [subscription invoice_1],
+    "account": [subscription account_1],
+    "unit_amount_in_cents": [subscription unit_amount_in_cents_1],
+    "quantity": [subscription quantity_1],
+    "currency": [subscription currency_1],
+    "activated_at": [subscription activated_at_1],
+    "canceled_at": [subscription canceled_at_1],
+    "expires_at": [subscription expires_at_1],
+    "current_period_started_at": [subscription current_period_started_at_1],
+    "current_period_ends_at": [subscription current_period_ends_at_1],
+    "trial_started_at": [subscription trial_started_at_1],
+    "trial_ends_at": [subscription trial_ends_at_1],
+    "tax_in_cents": [subscription tax_in_cents_1],
+    "tax_type": [subscription tax_type_1],
+    "tax_region": [subscription tax_region_1],
+    "tax_rate": [subscription tax_rate_1],
+    "po_number": [subscription po_number_1],
+    "net_terms": [subscription net_terms_1],
+    "collection_method": [subscription collection_method_1],
+    "subscription_add_ons": [subscription subscription_add_ons_1],
+    "pending_subscription": [subscription pending_subscription_1],
+    "terms_and_conditions": [subscription terms_and_conditions_1],
+    "customer_notes": [subscription customer_notes_1],
+    "bank_account_authorized_at": [subscription bank_account_authorized_at_1]
+  },
+  {
+    "plan": [subscription plan_2],
+    "uuid": [subscription uuid_2],
+    "state": [subscription state_2],
+    "invoice": [subscription invoice_2],
+    "account": [subscription account_2],
+    "unit_amount_in_cents": [subscription unit_amount_in_cents_2],
+    "quantity": [subscription quantity_2],
+    "currency": [subscription currency_2],
+    "activated_at": [subscription activated_at_2],
+    "canceled_at": [subscription canceled_at_2],
+    "expires_at": [subscription expires_at_2],
+    "current_period_started_at": [subscription current_period_started_at_2],
+    "current_period_ends_at": [subscription current_period_ends_at_2],
+    "trial_started_at": [subscription trial_started_at_2],
+    "trial_ends_at": [subscription trial_ends_at_2],
+    "tax_in_cents": [subscription tax_in_cents_2],
+    "tax_type": [subscription tax_type_2],
+    "tax_region": [subscription tax_region_2],
+    "tax_rate": [subscription tax_rate_2],
+    "po_number": [subscription po_number_2],
+    "net_terms": [subscription net_terms_2],
+    "collection_method": [subscription collection_method_2],
+    "subscription_add_ons": [subscription subscription_add_ons_2],
+    "pending_subscription": [subscription pending_subscription_2],
+    "terms_and_conditions": [subscription terms_and_conditions_2],
+    "customer_notes": [subscription customer_notes_2],
+    "bank_account_authorized_at": [subscription bank_account_authorized_at_2]
+  }
+]
+```
+>
+### 200 - INVALID PLAN CODE
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid recurly plan code"
+}
+```
+>
+### 200 - PLAN CODE NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "No product found with input plan code"
+}
+```
+
+Get user subscriptions
+### HTTP Request
+`GET http://domain.com/api/subscriptions`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+recurly_plan_code (required) | Plan code associated with Product
+
+## Get Subscription Addons
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+[
+    {
+        "href": [href_2],
+        "uri": [uri_2],
+        "destroyed": [destroyed (true/false)],
+        "new_record": [new_record (true/false)],
+        "attributes": {
+            "add_on_code": [add_on_code],
+            "add_on_type": [add_on_type],
+            "unit_amount_in_cents": [unit_amount_in_cents (int)],
+            "quantity": [quantity (int)],
+        },
+        "links": {},
+        "changed_attributes": {},
+        "subscription": [subscription]
+    },
+    {
+        "href": [href_2],
+        "uri": [uri_2],
+        "destroyed": [destroyed (true/false)],
+        "new_record": [new_record (true/false)],
+        "attributes": {
+            "add_on_code": [add_on_code],
+            "add_on_type": [add_on_type],
+            "unit_amount_in_cents": [unit_amount_in_cents (int)],
+            "quantity": [quantity (int)],
+        },
+        "links": {},
+        "changed_attributes": {},
+        "subscription": [subscription]
+    }
+]
+```
+>
+### 500 - ERROR
+**RESPONSE BODY:**
+
+```json
+  "Error" 
+```
+
+Get user subscriptions
+### HTTP Request
+`GET http://domain.com/api/subscriptions/active_add_ons`
+
+## Cancel User Subscriptions
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true
+}
+```
+>
+### 200 - INVALID UUID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid uuid"
+}
+```
+>
+### 200 - SUBSCRIPTION NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Subscription not found with input uuid"
+}
+```
+
+Get user subscriptions
+### HTTP Request
+`PUT http://domain.com/api/subscriptions/cancel`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+uuid (required) | Subscription's uuid
