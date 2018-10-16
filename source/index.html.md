@@ -1208,3 +1208,62 @@ Get user subscriptions
 Parameter  | Description
 --------- | -----------
 uuid (required) | Subscription's uuid
+
+## Add subscription
+<aside class="success">
+THIS API NOT REQUEST AUTHENTICITY TOKEN 
+</aside>
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{ 
+  "msg": "Success:[account_code]",
+  "status": 200 
+}
+```
+>
+### 200 - Error
+**RESPONSE BODY:**
+
+```json
+{ 
+  "msg": "Error message",
+  "status": 200 
+}
+```
+
+Order new subscription
+### HTTP Request
+`POST http://domain.com/api/subscription_orders`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+order (required) | Json params for order  
+
+
+Order Json Key |
+-------------- | 
+"email" |
+"confirm_email" |
+"first_name" |
+"last_name" |
+"billing_info" | 
+"number" |
+"month" |
+"year" |
+"phone" |
+"address_line_1" |
+"address_line_2" |
+"city" |
+"country" |
+"state" |
+"zip_code" |
+"recurly_token" |
+"recurly_plan_code" |
+"aff_code" |
+"tos_agreement" |
+"coupon_code" |
+"addon_code" |
