@@ -265,6 +265,45 @@ current_password (required) | User current password
 password (required) | User new password
 password_confirmation (required) | User new password confirmation
 
+## Reset Password
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true
+}
+```
+>
+### 200 - USER NOT FOUND:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "No user found with this email"
+}
+```
+>
+### 401 - MISSING EMAIL PARAM:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "You must provide an email address."
+}
+```
+
+Reset password (use when user forgot password)
+### HTTP Request
+`POST http://domain.com/api/users/password`
+### Body Parameters
+
+Parameter  | Description
+--------- | -----------
+email (required) | User email which need to be reset  
 
 ## Update Avatar
 >
