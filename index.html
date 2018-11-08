@@ -345,6 +345,14 @@
               </ul>
           </li>
           <li>
+            <a href="#add-on" class="toc-h1 toc-link" data-title="Add-on">Add-on</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#adding-addon" class="toc-h2 toc-link" data-title="Adding Addon">Adding Addon</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1314,7 +1322,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <p>Add user activity log when connected</p>
 <h3 id='http-request-17'>HTTP Request</h3>
-<p><code>POST http://domain.com/user_activity_logs/connected</code></p>
+<p><code>POST http://domain.com/api/user_activity_logs/connected</code></p>
 <h3 id='parameters-5'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1378,7 +1386,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <p>Add user activity log when disconnected</p>
 <h3 id='http-request-18'>HTTP Request</h3>
-<p><code>POST http://domain.com/user_activity_logs/disconnected</code></p>
+<p><code>POST http://domain.com/api/user_activity_logs/disconnected</code></p>
 <h3 id='parameters-6'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1442,7 +1450,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <p>Add user activity log when subscribed</p>
 <h3 id='http-request-19'>HTTP Request</h3>
-<p><code>POST http://domain.com/user_activity_logs/subscribed</code></p>
+<p><code>POST http://domain.com/api/user_activity_logs/subscribed</code></p>
 <h3 id='parameters-7'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1506,7 +1514,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <p>Add user activity log when unsubscribed</p>
 <h3 id='http-request-20'>HTTP Request</h3>
-<p><code>POST http://domain.com/user_activity_logs/unsubscribed</code></p>
+<p><code>POST http://domain.com/api/user_activity_logs/unsubscribed</code></p>
 <h3 id='parameters-8'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1977,6 +1985,57 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 <tr>
 <td>api_key</td>
 <td>affiliate api key</td>
+</tr>
+</tbody></table>
+<h1 id='add-on'>Add-on</h1>
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+<h2 id='adding-addon'>Adding Addon</h2>
+<blockquote>
+<h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add-on has been successfully added"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-addon-existed'>200 - Addon existed</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add-on existed"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-addon-is-not-present-for-user'>200 - Addon is not present for user</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed to add add-on"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add addon to user</p>
+<h3 id='http-request-27'>HTTP Request</h3>
+<p><code>POST http://domain.com/api/addons</code></p>
+<h3 id='parameters-14'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subscription_id (required)</td>
+<td>Subscription uuid for adding addon</td>
+</tr>
+<tr>
+<td>addon (required)</td>
+<td>addon code</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
