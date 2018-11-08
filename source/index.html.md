@@ -825,7 +825,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 
 Add user activity log when connected
 ### HTTP Request
-`POST http://domain.com/user_activity_logs/connected`
+`POST http://domain.com/api/user_activity_logs/connected`
 ### Parameters
 
 Parameter  | Description
@@ -879,7 +879,7 @@ event_details | Note for activity log
 
 Add user activity log when disconnected
 ### HTTP Request
-`POST http://domain.com/user_activity_logs/disconnected`
+`POST http://domain.com/api/user_activity_logs/disconnected`
 ### Parameters
 
 Parameter  | Description
@@ -933,7 +933,7 @@ event_details | Note for activity log
 
 Add user activity log when subscribed
 ### HTTP Request
-`POST http://domain.com/user_activity_logs/subscribed`
+`POST http://domain.com/api/user_activity_logs/subscribed`
 ### Parameters
 
 Parameter  | Description
@@ -987,7 +987,7 @@ event_details | Note for activity log
 
 Add user activity log when unsubscribed
 ### HTTP Request
-`POST http://domain.com/user_activity_logs/unsubscribed`
+`POST http://domain.com/api/user_activity_logs/unsubscribed`
 ### Parameters
 
 Parameter  | Description
@@ -1360,3 +1360,50 @@ zip_code | zip code
 phone | phone 
 external_offer_code | affiliate external offer code 
 api_key | affiliate api key   
+
+# Add-on
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+## Adding Addon
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": "Add-on has been successfully added"
+}
+```
+>
+### 200 - Addon existed
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Add-on existed"
+}
+```
+>
+### 200 - Addon is not present for user
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Failed to add add-on"
+}
+```
+
+Add addon to user
+
+### HTTP Request
+`POST http://domain.com/api/addons`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+subscription_id (required) | Subscription uuid for adding addon
+addon (required) | addon code
