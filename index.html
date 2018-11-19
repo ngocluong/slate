@@ -348,6 +348,9 @@
             <a href="#add-on" class="toc-h1 toc-link" data-title="Add-on">Add-on</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#list-available-addons" class="toc-h2 toc-link" data-title="List available Addons">List available Addons</a>
+                  </li>
+                  <li>
                     <a href="#adding-addon" class="toc-h2 toc-link" data-title="Adding Addon">Adding Addon</a>
                   </li>
               </ul>
@@ -1991,9 +1994,52 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 <aside class="success">
 REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
 </aside>
-<h2 id='adding-addon'>Adding Addon</h2>
+<h2 id='list-available-addons'>List available Addons</h2>
 <blockquote>
 <h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"subscription_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub1_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plan 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recurly_add_on_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"add on 1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add on display name 1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addon description 1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"disable_extra_charge_for_monthly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mi">34500</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"subscription_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub2_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plan 2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"recurly_add_on_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chat&amp;Sentiment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tip Ranks and chat room"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tipranks and chatroom"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tipranks and chatroom"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"disable_extra_charge_for_monthly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>List all available addon</p>
+<h3 id='http-request-27'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/addons</code></p>
+<h2 id='adding-addon'>Adding Addon</h2>
+<blockquote>
+<h3 id='200-success-response-26'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2020,7 +2066,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add addon to user</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/addons</code></p>
 <h3 id='parameters-14'>Parameters</h3>
 <table><thead>
