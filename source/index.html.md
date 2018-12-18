@@ -834,6 +834,9 @@ user_email (required) | Email of connected user
 user_ip (required) | User's ip address
 token (required) | MD5 of date
 event_details | Note for activity log
+device_type | mobile, web agent or desktop
+device_id | device id (always be the same on the same device)
+product | product user connecting with
 
 ## Disconnected
 >
@@ -1365,6 +1368,54 @@ api_key | affiliate api key
 <aside class="success">
 REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
 </aside>
+
+## List available Addons
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+[
+  {
+    "subscription_id": "sub1_id",
+    "plan_name": "Plan 1",
+    "addon": {
+      "id": 1,
+      "recurly_add_on_code": "level2",
+      "name": "add on 1",
+      "display_name": "Add on display name 1",
+      "description": "addon description 1",
+      "disable_extra_charge_for_monthly": false,
+      "is_enabled": true
+    },
+    "price": {
+      "USD": 34500
+    }
+  },
+  {
+    "subscription_id": "sub2_id",
+    "plan_name": "Plan 2",
+    "addon": {
+      "id": 2,
+      "recurly_add_on_code": "Chat&Sentiment",
+      "name": "Tip Ranks and chat room",
+      "display_name": "tipranks and chatroom",
+      "description": "tipranks and chatroom",
+      "disable_extra_charge_for_monthly": true,
+      "is_enabled": true
+    },
+    "price": {
+      "USD": 1500
+    }
+  }
+]
+```
+
+List all available addon
+
+### HTTP Request
+`GET http://domain.com/api/addons`
+
 ## Adding Addon
 >
 ### 200 SUCCESS RESPONSE:
