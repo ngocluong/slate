@@ -891,6 +891,9 @@ user_email (required) | Email of disconnected user
 user_ip (required) | User's ip address
 token (required) | MD5 of date
 event_details | Note for activity log
+device_type | mobile, web agent or desktop
+device_id | device id (always be the same on the same device)
+product | product user connecting with
 
 ## Subscribed
 >
@@ -945,6 +948,9 @@ user_email (required) | Email of subscribed user
 user_ip (required) | User's ip address
 token (required) | MD5 of date
 event_details | Note for activity log
+device_type | mobile, web agent or desktop
+device_id | device id (always be the same on the same device)
+product | product user connecting with
 
 ## Unsubscribed
 >
@@ -999,6 +1005,9 @@ user_email (required) | Email of unsubscribed user
 user_ip (required) | User's ip address
 token (required) | MD5 of date
 event_details | Note for activity log
+device_type | mobile, web agent or desktop
+device_id | device id (always be the same on the same device)
+product | product user connecting with
 
 # TOS Agreement
 <aside class="success">
