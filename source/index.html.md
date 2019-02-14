@@ -1067,6 +1067,74 @@ user_email (required) | Email of user sign TOS
 token (required) | MD5 of date  
 
 
+# User Trial Agreement
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+
+## Update Trial Agreement
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": "Signed trial agreement successfully"
+}
+```
+>
+### 200 - PARAMS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Error message"
+}
+```
+>
+### 200 - INVALID MD5 TOKEN
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Invalid token"
+}
+```
+>
+### 200 - USER NOT FOUND
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Email address was not found"
+}
+```
+>
+### 200 - MISSING TRIAL_AGREEMENT_ACCEPTED PARAMETER
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Missing trial_agreement_accepted param"
+}
+```
+
+Update Trial Agreement
+### HTTP Request
+`POST http://domain.com/api/trial_agreements`
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+user_email (required) | Email of user sign TOS  
+trial_agreement_accepted (required) | true/false for update agreement
+token (required) | MD5 of date  
+
 # Subscription
 <aside class="success">
 REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
