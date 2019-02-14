@@ -511,6 +511,16 @@ This API does not require authenticity token
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your account has been suspended due to Market Compliance inconsistencies. Please contact support."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
+<h3 id='200-trial-account-do-not-signed-agreement'>200 - TRIAL ACCOUNT DO NOT SIGNED AGREEMENT:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"trialAgreed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You need to fill out trial Agreement before logging in"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>Login to get user&#39;s credential</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/sign_in</code></p>
