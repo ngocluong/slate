@@ -164,6 +164,17 @@ This API does not require authenticity token
   "message": "Your account has been suspended due to Market Compliance inconsistencies. Please contact support."
 }
 ```
+>
+### 200 - TRIAL ACCOUNT DO NOT SIGNED AGREEMENT:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "trialAgreed": false,
+  "message": "You need to fill out trial Agreement before logging in"
+}
+```
 
 
 Login to get user's credential
