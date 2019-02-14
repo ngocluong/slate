@@ -320,6 +320,14 @@
               </ul>
           </li>
           <li>
+            <a href="#user-trial-agreement" class="toc-h1 toc-link" data-title="User Trial Agreement">User Trial Agreement</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-trial-agreement" class="toc-h2 toc-link" data-title="Update Trial Agreement">Update Trial Agreement</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#subscription" class="toc-h1 toc-link" data-title="Subscription">Subscription</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1650,13 +1658,86 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <td>MD5 of date</td>
 </tr>
 </tbody></table>
+<h1 id='user-trial-agreement'>User Trial Agreement</h1>
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+<h2 id='update-trial-agreement'>Update Trial Agreement</h2>
+<blockquote>
+<h3 id='200-success-response-21'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signed trial agreement successfully"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-params-invalid-7'>200 - PARAMS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-md5-token-6'>200 - INVALID MD5 TOKEN</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid token"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-user-not-found-7'>200 - USER NOT FOUND</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email address was not found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-missing-trial_agreement_accepted-parameter'>200 - MISSING TRIAL_AGREEMENT_ACCEPTED PARAMETER</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing trial_agreement_accepted param"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Update Trial Agreement</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>POST http://domain.com/api/trial_agreements</code></p>
+<h3 id='parameters-10'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_email (required)</td>
+<td>Email of user sign TOS</td>
+</tr>
+<tr>
+<td>trial_agreement_accepted (required)</td>
+<td>true/false for update agreement</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
+</tr>
+</tbody></table>
 <h1 id='subscription'>Subscription</h1>
 <aside class="success">
 REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
 </aside>
 <h2 id='get-user-subscriptions'>Get User Subscriptions</h2>
 <blockquote>
-<h3 id='200-success-response-21'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -1739,9 +1820,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get user subscriptions</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/subscriptions</code></p>
-<h3 id='parameters-10'>Parameters</h3>
+<h3 id='parameters-11'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1755,7 +1836,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </tbody></table>
 <h2 id='get-subscription-addons'>Get Subscription Addons</h2>
 <blockquote>
-<h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-23'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -1798,11 +1879,11 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"Error"</span><span class="w"> 
 </span></code></pre>
 <p>Get user subscriptions</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/subscriptions/active_add_ons</code></p>
 <h2 id='cancel-user-subscriptions'>Cancel User Subscriptions</h2>
 <blockquote>
-<h3 id='200-success-response-23'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-24'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1828,9 +1909,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get user subscriptions</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/subscriptions/cancel</code></p>
-<h3 id='parameters-11'>Parameters</h3>
+<h3 id='parameters-12'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1848,7 +1929,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </aside>
 
 <blockquote>
-<h3 id='200-success-response-24'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -1866,9 +1947,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Order new subscription</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/subscription_orders</code></p>
-<h3 id='parameters-12'>Parameters</h3>
+<h3 id='parameters-13'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1980,9 +2061,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Order new subscription</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/external_api/accounts</code></p>
-<h3 id='parameters-13'>Parameters</h3>
+<h3 id='parameters-14'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2044,7 +2125,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='list-available-addons'>List available Addons</h2>
 <blockquote>
-<h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-26'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -2083,11 +2164,11 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>List all available addon</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/addons</code></p>
 <h2 id='adding-addon'>Adding Addon</h2>
 <blockquote>
-<h3 id='200-success-response-26'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-27'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2114,9 +2195,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add addon to user</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-29'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/addons</code></p>
-<h3 id='parameters-14'>Parameters</h3>
+<h3 id='parameters-15'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
