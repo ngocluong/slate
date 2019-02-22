@@ -187,6 +187,7 @@ Parameter  | Description
 --------- | -----------
 email (required) | User email address which is registered on stt main page  
 password (required) | User password
+webfork (optional) | true/false to determine webfork app 
 
 
 ## Get all user emails
@@ -355,6 +356,16 @@ file (required) | User Avatar file
   "message": "Cannot find user setting"
 }
 ```
+>
+### 200 - CONTENT IS INVALID
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "user setting content is invalid"
+}
+```
 
 Update user setting file
 ### HTTP Request
@@ -401,6 +412,7 @@ Parameter  | Description
 --------- | ----------- 
 file | Required if leave file_content param blank. File ini for user setting
 file_content | Required if leave file param blank. content of user setting file
+force_upload (Boolean/Optional) | Optional true when force upload file content
 
 ## Update User Profile Picture
 >
