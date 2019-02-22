@@ -539,6 +539,10 @@ This API does not require authenticity token
 <td>password (required)</td>
 <td>User password</td>
 </tr>
+<tr>
+<td>webfork (optional)</td>
+<td>true/false to determine webfork app</td>
+</tr>
 </tbody></table>
 <h2 id='get-all-user-emails'>Get all user emails</h2>
 <blockquote>
@@ -725,6 +729,15 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cannot find user setting"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-content-is-invalid'>200 - CONTENT IS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user setting content is invalid"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user setting file</p>
