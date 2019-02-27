@@ -1158,6 +1158,40 @@ user_email (required) | Email of user sign TOS
 trial_agreement_accepted (required) | true/false for update agreement
 token (required) | MD5 of date  
 
+# Token Validation
+<aside class="success">
+REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN 
+</aside>
+
+## Update Trial Agreement
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+    "success": true,
+    "message": "Valid token",
+    "valid_until": "2019-03-13T15:35:07.000+07:00"
+}
+```
+>
+### 200 - EXPIRED/INVALID RESPONSE
+**RESPONSE BODY:**
+
+```json
+{
+    "success": false,
+    "message": "Invalid or expired tokens"
+}
+```
+
+Check token
+### HTTP Request
+`POST http://domain.com/api/token_validations/check`
+### Parameters
+It is based on authenticity token to check.  
+
 # Subscription
 <aside class="success">
 REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
