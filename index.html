@@ -331,7 +331,7 @@
             <a href="#token-validation" class="toc-h1 toc-link" data-title="Token Validation">Token Validation</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#update-trial-agreement-2" class="toc-h2 toc-link" data-title="Update Trial Agreement">Update Trial Agreement</a>
+                    <a href="#check-token" class="toc-h2 toc-link" data-title="CHECK TOKEN">CHECK TOKEN</a>
                   </li>
               </ul>
           </li>
@@ -1770,7 +1770,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <aside class="success">
 REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN 
 </aside>
-<h2 id='update-trial-agreement-2'>Update Trial Agreement</h2>
+<h2 id='check-token'>CHECK TOKEN</h2>
 <blockquote>
 <h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
@@ -1792,7 +1792,7 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 </span></code></pre>
 <p>Check token</p>
 <h3 id='http-request-23'>HTTP Request</h3>
-<p><code>POST http://domain.com/api/token_validations/check</code></p>
+<p><code>GET http://domain.com/api/token_validations/check</code></p>
 <h3 id='parameters-11'>Parameters</h3>
 <p>It is based on authenticity token to check.  </p>
 <h1 id='subscription'>Subscription</h1>
