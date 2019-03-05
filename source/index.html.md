@@ -1163,7 +1163,7 @@ token (required) | MD5 of date
 REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN 
 </aside>
 
-## Update Trial Agreement
+## CHECK TOKEN
 >
 ### 200 SUCCESS RESPONSE:
 **RESPONSE BODY:**
@@ -1188,7 +1188,7 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 
 Check token
 ### HTTP Request
-`POST http://domain.com/api/token_validations/check`
+`GET http://domain.com/api/token_validations/check`
 ### Parameters
 It is based on authenticity token to check.  
 
@@ -1592,3 +1592,93 @@ Parameter  | Description
 --------- | -----------
 subscription_id (required) | Subscription uuid for adding addon
 addon (required) | addon code
+
+# Add webfork log
+
+## Add log for user
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": 'User log uploaded'
+}
+```
+
+>
+### 200 MISSING PARAM:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": 'Missing file_content parameter'
+}
+```
+
+Add log for specific user
+
+### HTTP Request
+`PUT http://domain.com/api/user_logs`
+
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+file_content (required) | Log content
+
+## Add general log
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": true,
+  "message": 'User log uploaded'
+}
+```
+
+>
+### 200 MISSING PARAM:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": 'Missing file_content parameter'
+}
+```
+
+>
+### 200 INVALID TOKEN:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": 'Invalid token'
+}
+```
+
+Add general log
+
+### HTTP Request
+`POST http://domain.com/api/user_logs`
+
+### Parameters
+
+Parameter  | Description
+--------- | -----------
+file_content (required) | Log content
+token (required) | MD5 of date
