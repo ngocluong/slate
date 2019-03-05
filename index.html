@@ -372,6 +372,17 @@
               </ul>
           </li>
           <li>
+            <a href="#add-webfork-log" class="toc-h1 toc-link" data-title="Add webfork log">Add webfork log</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-log-for-user" class="toc-h2 toc-link" data-title="Add log for user">Add log for user</a>
+                  </li>
+                  <li>
+                    <a href="#add-general-log" class="toc-h2 toc-link" data-title="Add general log">Add general log</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -2275,6 +2286,95 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 <tr>
 <td>addon (required)</td>
 <td>addon code</td>
+</tr>
+</tbody></table>
+<h1 id='add-webfork-log'>Add webfork log</h1><h2 id='add-log-for-user'>Add log for user</h2>
+<aside class="success">
+REMEMBER -- Send your request with your authenticity token <a href="#authentication">example</a>
+</aside>
+
+<blockquote>
+<h3 id='200-success-response-29'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="err">'User</span><span class="w"> </span><span class="err">log</span><span class="w"> </span><span class="err">uploaded'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-missing-param'>200 MISSING PARAM:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="err">'Missing</span><span class="w"> </span><span class="err">file_content</span><span class="w"> </span><span class="err">parameter'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add log for specific user</p>
+<h3 id='http-request-31'>HTTP Request</h3>
+<p><code>PUT http://domain.com/api/user_logs</code></p>
+<h3 id='parameters-17'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file_content (required)</td>
+<td>Log content</td>
+</tr>
+</tbody></table>
+<h2 id='add-general-log'>Add general log</h2>
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+
+<blockquote>
+<h3 id='200-success-response-30'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="err">'User</span><span class="w"> </span><span class="err">log</span><span class="w"> </span><span class="err">uploaded'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-missing-param-2'>200 MISSING PARAM:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="err">'Missing</span><span class="w"> </span><span class="err">file_content</span><span class="w"> </span><span class="err">parameter'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-invalid-token'>200 INVALID TOKEN:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="err">'Invalid</span><span class="w"> </span><span class="err">token'</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add general log</p>
+<h3 id='http-request-32'>HTTP Request</h3>
+<p><code>POST http://domain.com/api/user_logs</code></p>
+<h3 id='parameters-18'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file_content (required)</td>
+<td>Log content</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
