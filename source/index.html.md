@@ -1625,7 +1625,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 Add log for specific user
 
 ### HTTP Request
-`PUT http://domain.com/api/user_logs`
+`POST http://domain.com/api/user_logs`
 
 ### Parameters
 
@@ -1674,7 +1674,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 Add general log
 
 ### HTTP Request
-`POST http://domain.com/api/user_logs`
+`POST http://domain.com/api/user_logs/general`
 
 ### Parameters
 
