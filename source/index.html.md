@@ -316,6 +316,7 @@ Reset password (use when user forgot password)
 Parameter  | Description
 --------- | -----------
 email (required) | User email which need to be reset  
+webfork (optional) | true/false to determine webfork app
 
 ## Update Avatar
 >
@@ -1483,11 +1484,16 @@ Order new subscription
 `POST http://domain.com/api/external_api/accounts`
 ### Parameters
 
+Header  | Description
+--------- | -----------
+X-Api-Key | External Offer api key
+
+
 Parameter  | Description
 --------- | -----------
 first_name | first name 
 last_name | last name 
-email | email 
+email (required) | email 
 address_line_1 | address line 1 
 address_line_2 | address line 2 
 country | country 
