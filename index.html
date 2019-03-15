@@ -708,6 +708,10 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <td>email (required)</td>
 <td>User email which need to be reset</td>
 </tr>
+<tr>
+<td>webfork (optional)</td>
+<td>true/false to determine webfork app</td>
+</tr>
 </tbody></table>
 <h2 id='update-avatar'>Update Avatar</h2>
 <blockquote>
@@ -2141,6 +2145,18 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 <h3 id='parameters-15'>Parameters</h3>
 <table><thead>
 <tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Api-Key</td>
+<td>External Offer api key</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
 <th>Parameter</th>
 <th>Description</th>
 </tr>
@@ -2154,7 +2170,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 <td>last name</td>
 </tr>
 <tr>
-<td>email</td>
+<td>email (required)</td>
 <td>email</td>
 </tr>
 <tr>
