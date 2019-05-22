@@ -436,6 +436,28 @@ force_upload (Boolean/Optional) | Optional true when force upload file content
   "message": "Upload was unsuccessful"
 }
 ```
+Get user backup setting file
+### HTTP Request
+`GET http://domain.com/api/users/backup_setting`
+
+## Get User Backup File
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+"Json file for backup"
+```
+>
+### 404 FILE NOT FOUND:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Cannot find user backup setting"
+}
+```
 
 Update user Profile picture
 ### HTTP Request
