@@ -257,6 +257,9 @@
                     <a href="#update-user-profile-picture" class="toc-h2 toc-link" data-title="Update User Profile Picture">Update User Profile Picture</a>
                   </li>
                   <li>
+                    <a href="#get-user-backup-file" class="toc-h2 toc-link" data-title="Get User Backup File">Get User Backup File</a>
+                  </li>
+                  <li>
                     <a href="#get-user-profile" class="toc-h2 toc-link" data-title="Get User Profile">Get User Profile</a>
                   </li>
                   <li>
@@ -836,8 +839,27 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Upload was unsuccessful"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Update user Profile picture</p>
+<p>Get user backup setting file</p>
 <h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/users/backup_setting</code></p>
+<h2 id='get-user-backup-file'>Get User Backup File</h2>
+<blockquote>
+<h3 id='200-success-response-10'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"Json file for backup"</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='404-file-not-found'>404 FILE NOT FOUND:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cannot find user backup setting"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Update user Profile picture</p>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/users/update_profile_picture</code></p>
 <h3 id='body-parameters-6'>Body Parameters</h3>
 <table><thead>
@@ -853,7 +875,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='get-user-profile'>Get User Profile</h2>
 <blockquote>
-<h3 id='200-success-response-10'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-11'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong><br/></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -880,11 +902,11 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get user profile</p>
-<h3 id='http-request-10'>HTTP Request</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/profile</code></p>
 <h2 id='update-user-profile'>Update User Profile</h2>
 <blockquote>
-<h3 id='200-success-response-11'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-12'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -911,7 +933,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user Profile</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users</code></p>
 <h3 id='body-parameters-7'>Body Parameters</h3>
 <table><thead>
@@ -992,7 +1014,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update user Profile</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users/security_question</code></p>
 <h3 id='body-parameters-8'>Body Parameters</h3>
 <table><thead>
@@ -1012,7 +1034,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='get-order'>Get Order</h2>
 <blockquote>
-<h3 id='200-success-response-12'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-13'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="w">
@@ -1051,7 +1073,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get order by email</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/orders/:email</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
@@ -1071,7 +1093,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='get-system-message'>Get system message</h2>
 <blockquote>
-<h3 id='200-success-response-13'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-14'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1105,7 +1127,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get system messages</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/system_messages</code></p>
 <h3 id='parameters-2'>Parameters</h3>
 <table><thead>
@@ -1129,7 +1151,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </tbody></table>
 <h2 id='read-message'>Read Message</h2>
 <blockquote>
-<h3 id='200-success-response-14'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-15'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1146,7 +1168,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Read system message</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/system_messages/:id/read</code></p>
 <h3 id='parameters-3'>Parameters</h3>
 <table><thead>
@@ -1166,7 +1188,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='update-nyse-entry'>Update Nyse Entry</h2>
 <blockquote>
-<h3 id='200-success-response-15'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-16'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1201,7 +1223,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>sign Market Agreement</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/nyse_entries/:id</code></p>
 <h3 id='parameters-4'>Parameters</h3>
 <table><thead>
@@ -1346,7 +1368,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 <h2 id='connected'>Connected</h2>
 <blockquote>
-<h3 id='200-success-response-16'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-17'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1382,7 +1404,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add user activity log when connected</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-18'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/user_activity_logs/connected</code></p>
 <h3 id='parameters-5'>Parameters</h3>
 <table><thead>
@@ -1422,7 +1444,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='disconnected'>Disconnected</h2>
 <blockquote>
-<h3 id='200-success-response-17'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-18'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1458,7 +1480,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add user activity log when disconnected</p>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-19'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/user_activity_logs/disconnected</code></p>
 <h3 id='parameters-6'>Parameters</h3>
 <table><thead>
@@ -1498,7 +1520,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='subscribed'>Subscribed</h2>
 <blockquote>
-<h3 id='200-success-response-18'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-19'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1534,7 +1556,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add user activity log when subscribed</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-20'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/user_activity_logs/subscribed</code></p>
 <h3 id='parameters-7'>Parameters</h3>
 <table><thead>
@@ -1574,7 +1596,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='unsubscribed'>Unsubscribed</h2>
 <blockquote>
-<h3 id='200-success-response-19'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-20'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1610,7 +1632,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add user activity log when unsubscribed</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/user_activity_logs/unsubscribed</code></p>
 <h3 id='parameters-8'>Parameters</h3>
 <table><thead>
@@ -1654,7 +1676,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 <h2 id='sign-tos'>Sign TOS</h2>
 <blockquote>
-<h3 id='200-success-response-20'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-21'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1690,7 +1712,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Sign TOS Agreement</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/user_tos/signed</code></p>
 <h3 id='parameters-9'>Parameters</h3>
 <table><thead>
@@ -1714,7 +1736,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 <h2 id='update-trial-agreement'>Update Trial Agreement</h2>
 <blockquote>
-<h3 id='200-success-response-21'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1759,7 +1781,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Update Trial Agreement</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/trial_agreements</code></p>
 <h3 id='parameters-10'>Parameters</h3>
 <table><thead>
@@ -1787,7 +1809,7 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 </aside>
 <h2 id='check-token'>CHECK TOKEN</h2>
 <blockquote>
-<h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-23'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1806,7 +1828,7 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Check token</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/token_validations/check</code></p>
 <h3 id='parameters-11'>Parameters</h3>
 <p>It is based on authenticity token to check.  </p>
@@ -1816,7 +1838,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='get-user-subscriptions'>Get User Subscriptions</h2>
 <blockquote>
-<h3 id='200-success-response-23'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-24'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -1899,7 +1921,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get user subscriptions</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/subscriptions</code></p>
 <h3 id='parameters-12'>Parameters</h3>
 <table><thead>
@@ -1915,7 +1937,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </tbody></table>
 <h2 id='get-subscription-addons'>Get Subscription Addons</h2>
 <blockquote>
-<h3 id='200-success-response-24'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -1958,11 +1980,11 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"Error"</span><span class="w"> 
 </span></code></pre>
 <p>Get user subscriptions</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/subscriptions/active_add_ons</code></p>
 <h2 id='cancel-user-subscriptions'>Cancel User Subscriptions</h2>
 <blockquote>
-<h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-26'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1988,7 +2010,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get user subscriptions</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/subscriptions/cancel</code></p>
 <h3 id='parameters-13'>Parameters</h3>
 <table><thead>
@@ -2008,7 +2030,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </aside>
 
 <blockquote>
-<h3 id='200-success-response-26'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-27'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -2026,7 +2048,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Order new subscription</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/subscription_orders</code></p>
 <h3 id='parameters-14'>Parameters</h3>
 <table><thead>
@@ -2140,7 +2162,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Order new subscription</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-29'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/external_api/accounts</code></p>
 <h3 id='parameters-15'>Parameters</h3>
 <table><thead>
@@ -2216,7 +2238,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='list-available-addons'>List available Addons</h2>
 <blockquote>
-<h3 id='200-success-response-27'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-28'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -2255,11 +2277,11 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>List all available addon</p>
-<h3 id='http-request-29'>HTTP Request</h3>
+<h3 id='http-request-30'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/addons</code></p>
 <h2 id='adding-addon'>Adding Addon</h2>
 <blockquote>
-<h3 id='200-success-response-28'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-29'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2286,7 +2308,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add addon to user</p>
-<h3 id='http-request-30'>HTTP Request</h3>
+<h3 id='http-request-31'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/addons</code></p>
 <h3 id='parameters-16'>Parameters</h3>
 <table><thead>
@@ -2310,7 +2332,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 
 <blockquote>
-<h3 id='200-success-response-29'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-30'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2328,7 +2350,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add log for specific user</p>
-<h3 id='http-request-31'>HTTP Request</h3>
+<h3 id='http-request-32'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/user_logs</code></p>
 <h3 id='parameters-17'>Parameters</h3>
 <table><thead>
@@ -2348,7 +2370,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 
 <blockquote>
-<h3 id='200-success-response-30'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-31'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2375,7 +2397,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add general log</p>
-<h3 id='http-request-32'>HTTP Request</h3>
+<h3 id='http-request-33'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/user_logs/general</code></p>
 <h3 id='parameters-18'>Parameters</h3>
 <table><thead>
