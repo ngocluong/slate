@@ -257,10 +257,7 @@
                     <a href="#update-user-profile-picture" class="toc-h2 toc-link" data-title="Update User Profile Picture">Update User Profile Picture</a>
                   </li>
                   <li>
-                    <a href="#get-user-backup-setting-file" class="toc-h2 toc-link" data-title="Get user backup setting file">Get user backup setting file</a>
-                  </li>
-                  <li>
-                    <a href="#get-user-backup-setting-file-2" class="toc-h2 toc-link" data-title="Get User Backup Setting File">Get User Backup Setting File</a>
+                    <a href="#get-user-backup-setting-file" class="toc-h2 toc-link" data-title="Get User Backup Setting File">Get User Backup Setting File</a>
                   </li>
                   <li>
                     <a href="#get-user-profile" class="toc-h2 toc-link" data-title="Get User Profile">Get User Profile</a>
@@ -841,9 +838,23 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Upload was unsuccessful"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='get-user-backup-setting-file'>Get user backup setting file</h2><h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET http://domain.com/api/users/backup_setting</code></p>
-<h2 id='get-user-backup-setting-file-2'>Get User Backup Setting File</h2>
+</span></code></pre>
+<p>Update user Profile picture</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST http://domain.com/api/users/update_profile_picture</code></p>
+<h3 id='body-parameters-6'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file (required)</td>
+<td>User profile picture</td>
+</tr>
+</tbody></table>
+<h2 id='get-user-backup-setting-file'>Get User Backup Setting File</h2>
 <blockquote>
 <h3 id='200-success-response-10'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
@@ -859,21 +870,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cannot find user backup setting"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Update user Profile picture</p>
+<p>Get user backup setting file</p>
 <h3 id='http-request-10'>HTTP Request</h3>
-<p><code>POST http://domain.com/api/users/update_profile_picture</code></p>
-<h3 id='body-parameters-6'>Body Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>file (required)</td>
-<td>User profile picture</td>
-</tr>
-</tbody></table>
+<p><code>GET http://domain.com/api/users/backup_setting</code></p>
 <h2 id='get-user-profile'>Get User Profile</h2>
 <blockquote>
 <h3 id='200-success-response-11'>200 SUCCESS RESPONSE:</h3>
