@@ -403,7 +403,9 @@
 <h1 id='authentication'>Authentication</h1><h2 id='user-authenticaticity-token'>User Authenticaticity Token</h2>
 <blockquote>
 <p>without/incorrect authenticity token, user will receive following response:</p>
-<h3 id='200-required-token'>200 REQUIRED TOKEN:</h3>
+<h3 id='401-required-token'>401 REQUIRED TOKEN:</h3>
+<p><strong>Status code: 401</strong></p>
+
 <p><strong>RESPONSE BODY:</strong><br/>
 &emsp;{<br/>
   &emsp;&emsp;success: false,<br/>
@@ -430,6 +432,8 @@ This API does not require authenticity token
 
 <blockquote>
 <h3 id='200-success-response'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
@@ -445,6 +449,8 @@ This API does not require authenticity token
 &emsp;Uid →[uid Email]<br/>
 &emsp;Content-Type →application/json; charset=utf-8<br/></p>
 <h3 id='401-without-subscription'>401 - WITHOUT SUBSCRIPTION</h3>
+<p><strong>Status code: 401</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
@@ -454,6 +460,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='401-subscription-expired'>401 - SUBSCRIPTION EXPIRED</h3>
+<p><strong>Status code: 401</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -463,6 +471,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='401-account-is-not-activated'>401 - ACCOUNT IS NOT ACTIVATED</h3>
+<p><strong>Status code: 401</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -472,6 +482,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='401-invalid-login-credentials'>401 - INVALID LOGIN CREDENTIALS</h3>
+<p><strong>Status code: 401</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -480,7 +492,9 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='401-service-is-down'>401 - SERVICE IS DOWN</h3>
+<h3 id='500-service-is-down'>500 - SERVICE IS DOWN</h3>
+<p><strong>Status code: 500</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -489,7 +503,9 @@ This API does not require authenticity token
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-ip-is-banned'>200 - IP IS BANNED</h3>
+<h3 id='403-ip-is-banned'>403 - IP IS BANNED</h3>
+<p><strong>Status code: 403</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -499,6 +515,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='200-require-fill-market-agreement'>200 - REQUIRE FILL MARKET AGREEMENT:</h3>
+<p><strong>Status code: 403</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -508,6 +526,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='200-require-update-market-agreement'>200 - REQUIRE UPDATE MARKET AGREEMENT:</h3>
+<p><strong>Status code: 403</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -517,6 +537,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='200-missing-tos-agreement'>200 - MISSING TOS AGREEMENT:</h3>
+<p><strong>Status code: 403</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -526,6 +548,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='200-account-suppended'>200 - ACCOUNT SUPPENDED:</h3>
+<p><strong>Status code: 403</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -535,6 +559,8 @@ This API does not require authenticity token
 </span></code></pre>
 <blockquote>
 <h3 id='200-trial-account-do-not-signed-agreement'>200 - TRIAL ACCOUNT DO NOT SIGNED AGREEMENT:</h3>
+<p><strong>Status code: 403</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -568,6 +594,7 @@ This API does not require authenticity token
 </tbody></table>
 <h2 id='get-all-user-emails'>Get all user emails</h2>
 <blockquote>
+<p><strong>Status code: 200</strong></p>
 <h3 id='200-success-response-2'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong><br/>
 <em>list of user emails</em></p>
@@ -597,6 +624,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 
 <blockquote>
 <h3 id='200-success-response-3'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong><br/></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -611,6 +640,17 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
        </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">picture_url_</span><span class="mi">2</span><span class="p">]</span><span class="w">
      </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='400-invalid-md5-token'>400 - INVALID MD5 TOKEN</h3>
+<p><strong>Status code: 400</strong></p>
+
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid token"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get user profile pictures by nicknames</p>
@@ -631,6 +671,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <h2 id='update-password'>Update Password</h2>
 <blockquote>
 <h3 id='200-success-response-4'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -639,7 +681,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid'>200 - INVALID:</h3>
+<h3 id='422-invalid'>422 - INVALID:</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -673,6 +717,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <h2 id='reset-password'>Reset Password</h2>
 <blockquote>
 <h3 id='200-success-response-5'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -680,7 +726,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-user-not-found'>200 - USER NOT FOUND:</h3>
+<h3 id='404-user-not-found'>404 - USER NOT FOUND:</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -690,6 +738,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <blockquote>
 <h3 id='401-missing-email-param'>401 - MISSING EMAIL PARAM:</h3>
+<p><strong>Status code: 401</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -718,6 +768,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='update-avatar'>Update Avatar</h2>
 <blockquote>
+<p><strong>Status code: 200</strong></p>
 <h3 id='200-success-response-6'>200 SUCCESS RESPONSE:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
@@ -744,12 +795,16 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <h2 id='get-user-setting'>Get User Setting</h2>
 <blockquote>
 <h3 id='200-success-response-7'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"User setting file content."</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='500-cannot-find-user-setting'>500 - CANNOT FIND USER SETTING:</h3>
+<h3 id='404-cannot-find-user-setting'>404 - CANNOT FIND USER SETTING:</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -758,7 +813,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-content-is-invalid'>200 - CONTENT IS INVALID</h3>
+<h3 id='400-content-is-invalid'>400 - CONTENT IS INVALID</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -772,6 +829,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <h2 id='update-user-setting'>Update User Setting</h2>
 <blockquote>
 <h3 id='200-success-response-8'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -780,7 +839,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-missing-empty-file'>200 - MISSING/EMPTY FILE:</h3>
+<h3 id='422-missing-empty-file'>422 - MISSING/EMPTY FILE:</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -789,7 +850,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-fail-to-upload'>200 - FAIL TO UPLOAD:</h3>
+<h3 id='422-fail-to-upload'>422 - FAIL TO UPLOAD:</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -823,6 +886,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <h2 id='update-user-profile-picture'>Update User Profile Picture</h2>
 <blockquote>
 <h3 id='200-success-response-9'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -831,7 +896,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-fail-to-upload-2'>200 - FAIL TO UPLOAD:</h3>
+<h3 id='422-fail-to-upload-2'>422 - FAIL TO UPLOAD:</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -857,12 +924,16 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <h2 id='get-user-backup-setting-file'>Get User Backup Setting File</h2>
 <blockquote>
 <h3 id='200-success-response-10'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="s2">"Json file for backup"</span><span class="w">
 </span></code></pre>
 <blockquote>
 <h3 id='404-file-not-found'>404 FILE NOT FOUND:</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -876,6 +947,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <h2 id='get-user-profile'>Get User Profile</h2>
 <blockquote>
 <h3 id='200-success-response-11'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong><br/></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -906,7 +979,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <p><code>GET http://domain.com/api/users/profile</code></p>
 <h2 id='update-user-profile'>Update User Profile</h2>
 <blockquote>
-<h3 id='200-success-response-12'>200 SUCCESS RESPONSE:</h3>
+<h3 id='201-success-response'>201 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 201</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -915,7 +990,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-fail-to-upload-3'>200 - FAIL TO UPLOAD:</h3>
+<h3 id='422-fail-to-upload-3'>422 - FAIL TO UPLOAD:</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -925,6 +1002,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <blockquote>
 <h3 id='400-missing-parameter'>400 - MISSING PARAMETER</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -997,7 +1076,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='update-user-security-question'>Update User security question</h2>
 <blockquote>
-<h3 id='201-success-response'>201 SUCCESS RESPONSE:</h3>
+<h3 id='201-success-response-2'>201 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 201</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1006,6 +1087,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <blockquote>
 <h3 id='400-invalid-json'>400 - INVALID JSON</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1013,7 +1096,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid json data"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Update User security question</p>
+<p>Update user Profile</p>
 <h3 id='http-request-13'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users/security_question</code></p>
 <h3 id='body-parameters-8'>Body Parameters</h3>
@@ -1034,7 +1117,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='get-order'>Get Order</h2>
 <blockquote>
-<h3 id='200-success-response-13'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-12'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">[</span><span class="w">
@@ -1066,6 +1151,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span></code></pre>
 <blockquote>
 <h3 id='404-not-found'>404 - NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1093,7 +1180,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='get-system-message'>Get system message</h2>
 <blockquote>
-<h3 id='200-success-response-14'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-13'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1151,7 +1240,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </tbody></table>
 <h2 id='read-message'>Read Message</h2>
 <blockquote>
-<h3 id='200-success-response-15'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-14'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1159,7 +1250,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-not-found'>200 - NOT FOUND</h3>
+<h3 id='404-not-found-2'>404 - NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1188,7 +1281,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='update-nyse-entry'>Update Nyse Entry</h2>
 <blockquote>
-<h3 id='200-success-response-16'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-15'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1196,7 +1291,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-nyse-entry-is-complete-already'>200 - NYSE ENTRY IS COMPLETE ALREADY</h3>
+<h3 id='406-nyse-entry-is-complete-already'>406 - NYSE ENTRY IS COMPLETE ALREADY</h3>
+<p><strong>Status code: 406</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1205,7 +1302,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-nyse-token'>200 - INVALID NYSE TOKEN</h3>
+<h3 id='404-invalid-nyse-token'>404 - INVALID NYSE TOKEN</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1214,7 +1313,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-params-invalid'>200 - PARAMS INVALID</h3>
+<h3 id='422-params-invalid'>422 - PARAMS INVALID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1368,7 +1469,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 <h2 id='connected'>Connected</h2>
 <blockquote>
-<h3 id='200-success-response-17'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-16'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1377,7 +1480,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-params-invalid-2'>200 - PARAMS INVALID</h3>
+<h3 id='422-params-invalid-2'>422 - PARAMS INVALID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1386,7 +1491,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-md5-token'>200 - INVALID MD5 TOKEN</h3>
+<h3 id='400-invalid-md5-token-2'>400 - INVALID MD5 TOKEN</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1395,7 +1502,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-user-not-found-2'>200 - USER NOT FOUND</h3>
+<h3 id='404-user-not-found-2'>404 - USER NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1444,7 +1553,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='disconnected'>Disconnected</h2>
 <blockquote>
-<h3 id='200-success-response-18'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-17'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1453,7 +1564,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-params-invalid-3'>200 - PARAMS INVALID</h3>
+<h3 id='422-params-invalid-3'>422 - PARAMS INVALID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1462,7 +1575,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-md5-token-2'>200 - INVALID MD5 TOKEN</h3>
+<h3 id='400-invalid-md5-token-3'>400 - INVALID MD5 TOKEN</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1471,7 +1586,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-user-not-found-3'>200 - USER NOT FOUND</h3>
+<h3 id='404-user-not-found-3'>404 - USER NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1520,7 +1637,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='subscribed'>Subscribed</h2>
 <blockquote>
-<h3 id='200-success-response-19'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-18'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1529,7 +1648,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-params-invalid-4'>200 - PARAMS INVALID</h3>
+<h3 id='422-params-invalid-4'>422 - PARAMS INVALID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1538,7 +1659,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-md5-token-3'>200 - INVALID MD5 TOKEN</h3>
+<h3 id='400-invalid-md5-token-4'>400 - INVALID MD5 TOKEN</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1547,7 +1670,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-user-not-found-4'>200 - USER NOT FOUND</h3>
+<h3 id='404-user-not-found-4'>404 - USER NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1596,7 +1721,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </tbody></table>
 <h2 id='unsubscribed'>Unsubscribed</h2>
 <blockquote>
-<h3 id='200-success-response-20'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-19'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1605,7 +1732,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-params-invalid-5'>200 - PARAMS INVALID</h3>
+<h3 id='422-params-invalid-5'>422 - PARAMS INVALID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1614,7 +1743,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-md5-token-4'>200 - INVALID MD5 TOKEN</h3>
+<h3 id='400-invalid-md5-token-5'>400 - INVALID MD5 TOKEN</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1623,7 +1754,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-user-not-found-5'>200 - USER NOT FOUND</h3>
+<h3 id='404-user-not-found-5'>404 - USER NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1676,7 +1809,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 <h2 id='sign-tos'>Sign TOS</h2>
 <blockquote>
-<h3 id='200-success-response-21'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-20'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1685,7 +1820,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-params-invalid-6'>200 - PARAMS INVALID</h3>
+<h3 id='422-params-invalid-6'>422 - PARAMS INVALID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1694,7 +1831,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-md5-token-5'>200 - INVALID MD5 TOKEN</h3>
+<h3 id='400-invalid-md5-token-6'>400 - INVALID MD5 TOKEN</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1703,7 +1842,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-user-not-found-6'>200 - USER NOT FOUND</h3>
+<h3 id='404-user-not-found-6'>404 - USER NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1736,7 +1877,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 <h2 id='update-trial-agreement'>Update Trial Agreement</h2>
 <blockquote>
-<h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-21'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1745,7 +1888,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-params-invalid-7'>200 - PARAMS INVALID</h3>
+<h3 id='422-params-invalid-7'>422 - PARAMS INVALID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1754,7 +1899,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-md5-token-6'>200 - INVALID MD5 TOKEN</h3>
+<h3 id='400-invalid-md5-token-7'>400 - INVALID MD5 TOKEN</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1763,7 +1910,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-user-not-found-7'>200 - USER NOT FOUND</h3>
+<h3 id='404-user-not-found-7'>404 - USER NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1772,7 +1921,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-missing-trial_agreement_accepted-parameter'>200 - MISSING TRIAL_AGREEMENT_ACCEPTED PARAMETER</h3>
+<h3 id='422-missing-trial_agreement_accepted-parameter'>422 - MISSING TRIAL_AGREEMENT_ACCEPTED PARAMETER</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1809,7 +1960,9 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 </aside>
 <h2 id='check-token'>CHECK TOKEN</h2>
 <blockquote>
-<h3 id='200-success-response-23'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-22'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1819,7 +1972,9 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-expired-invalid-response'>200 - EXPIRED/INVALID RESPONSE</h3>
+<h3 id='400-expired-invalid-response'>400 - EXPIRED/INVALID RESPONSE</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1838,7 +1993,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='get-user-subscriptions'>Get User Subscriptions</h2>
 <blockquote>
-<h3 id='200-success-response-24'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-23'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -1903,7 +2060,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-plan-code'>200 - INVALID PLAN CODE</h3>
+<h3 id='404-invalid-plan-code'>404 - INVALID PLAN CODE</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1912,7 +2071,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-plan-code-not-found'>200 - PLAN CODE NOT FOUND</h3>
+<h3 id='404-plan-code-not-found'>404 - PLAN CODE NOT FOUND</h3>
+<p><strong>Status code: 404</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1937,7 +2098,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </tbody></table>
 <h2 id='get-subscription-addons'>Get Subscription Addons</h2>
 <blockquote>
-<h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-24'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -1975,6 +2138,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span></code></pre>
 <blockquote>
 <h3 id='500-error'>500 - ERROR</h3>
+<p><strong>Status code: 500</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="s2">"Error"</span><span class="w"> 
@@ -1984,7 +2149,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 <p><code>GET http://domain.com/api/subscriptions/active_add_ons</code></p>
 <h2 id='cancel-user-subscriptions'>Cancel User Subscriptions</h2>
 <blockquote>
-<h3 id='200-success-response-26'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-25'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1992,7 +2159,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-uuid'>200 - INVALID UUID</h3>
+<h3 id='422-invalid-uuid'>422 - INVALID UUID</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2001,7 +2170,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-subscription-not-found'>200 - SUBSCRIPTION NOT FOUND</h3>
+<h3 id='422-subscription-not-found'>422 - SUBSCRIPTION NOT FOUND</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2030,7 +2201,11 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </aside>
 
 <blockquote>
-<h3 id='200-success-response-27'>200 SUCCESS RESPONSE:</h3>
+</blockquote>
+<h3 id='200-success-response-26'>200 SUCCESS RESPONSE:</h3>
+<blockquote>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -2039,7 +2214,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-error'>200 - Error</h3>
+<h3 id='422-error'>422 - Error</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -2138,7 +2315,9 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </aside>
 
 <blockquote>
-<h3 id='201-success-response-2'>201 SUCCESS RESPONSE:</h3>
+<h3 id='201-success-response-3'>201 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 201</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -2147,6 +2326,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </span></code></pre>
 <blockquote>
 <h3 id='500-internal-server-error'>500 - Internal server error</h3>
+<p><strong>Status code: 500</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -2155,6 +2336,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 </span></code></pre>
 <blockquote>
 <h3 id='400-error-when-create-user'>400 - Error when create user</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
@@ -2238,7 +2421,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 <h2 id='list-available-addons'>List available Addons</h2>
 <blockquote>
-<h3 id='200-success-response-28'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-27'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
@@ -2281,7 +2466,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 <p><code>GET http://domain.com/api/addons</code></p>
 <h2 id='adding-addon'>Adding Addon</h2>
 <blockquote>
-<h3 id='200-success-response-29'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-28'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2290,7 +2477,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-addon-existed'>200 - Addon existed</h3>
+<h3 id='406-addon-existed'>406 - Addon existed</h3>
+<p><strong>Status code: 406</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2299,12 +2488,14 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-addon-is-not-present-for-user'>200 - Addon is not present for user</h3>
+<h3 id='400-addon-is-not-present-for-user'>400 - Addon is not present for user</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed to add add-on"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add-on is not available"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Add addon to user</p>
@@ -2332,7 +2523,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </aside>
 
 <blockquote>
-<h3 id='200-success-response-30'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-29'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2341,7 +2534,9 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-missing-param'>200 MISSING PARAM:</h3>
+<h3 id='422-missing-param'>422 MISSING PARAM:</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2370,7 +2565,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </aside>
 
 <blockquote>
-<h3 id='200-success-response-31'>200 SUCCESS RESPONSE:</h3>
+<h3 id='200-success-response-30'>200 SUCCESS RESPONSE:</h3>
+<p><strong>Status code: 200</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2379,7 +2576,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-missing-param-2'>200 MISSING PARAM:</h3>
+<h3 id='422-missing-param-2'>422 MISSING PARAM:</h3>
+<p><strong>Status code: 422</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2388,7 +2587,9 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<h3 id='200-invalid-token'>200 INVALID TOKEN:</h3>
+<h3 id='400-invalid-token'>400 INVALID TOKEN:</h3>
+<p><strong>Status code: 400</strong></p>
+
 <p><strong>RESPONSE BODY:</strong></p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
