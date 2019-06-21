@@ -506,6 +506,7 @@ Parameter  | Description
 file | Required if leave file_content param blank. File ini for user setting
 file_content | Required if leave file param blank. content of user setting file
 force_upload (Boolean/Optional) | Optional true when force upload file content
+update_user_settings (Boolean/Optional) | Optional true when we insert setting into backup for tracking
 
 ## Update User Profile Picture
 >
