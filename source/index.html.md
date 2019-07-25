@@ -22,10 +22,7 @@ Welcome to the Stockstotade API! You can use our API to access STT API endpoints
 ## User Authenticaticity Token
 > 
 without/incorrect authenticity token, user will receive following response:
-### 401 REQUIRED TOKEN:
->
-**Status code: 401**
->
+### 200 REQUIRED TOKEN:
 **RESPONSE BODY:**<br/>
 &emsp;{<br/>
   &emsp;&emsp;success: false,<br/>
@@ -53,9 +50,6 @@ This API does not require authenticity token
 
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -72,9 +66,6 @@ This API does not require authenticity token
 &emsp;Uid →[uid Email]<br/>
 &emsp;Content-Type →application/json; charset=utf-8<br/>
 ### 401 - WITHOUT SUBSCRIPTION
->
-**Status code: 401**
->
 **RESPONSE BODY:**
 
 ```json
@@ -85,9 +76,6 @@ This API does not require authenticity token
 ```
 >
 ### 401 - SUBSCRIPTION EXPIRED
->
-**Status code: 401**
->
 **RESPONSE BODY:**
 
 ```json
@@ -98,9 +86,6 @@ This API does not require authenticity token
 ```
 >
 ### 401 - ACCOUNT IS NOT ACTIVATED
->
-**Status code: 401**
->
 **RESPONSE BODY:**
 
 ```json
@@ -111,9 +96,6 @@ This API does not require authenticity token
 ```
 >
 ### 401 - INVALID LOGIN CREDENTIALS
->
-**Status code: 401**
->
 **RESPONSE BODY:**
 
 ```json
@@ -123,10 +105,7 @@ This API does not require authenticity token
 }
 ```
 >
-### 500 - SERVICE IS DOWN
->
-**Status code: 500**
->
+### 401 - SERVICE IS DOWN
 **RESPONSE BODY:**
 
 ```json
@@ -136,10 +115,7 @@ This API does not require authenticity token
 }
 ```
 >
-### 403 - IP IS BANNED
->
-**Status code: 403**
->
+### 200 - IP IS BANNED
 **RESPONSE BODY:**
 
 ```json
@@ -150,9 +126,6 @@ This API does not require authenticity token
 ```
 >
 ### 200 - REQUIRE FILL MARKET AGREEMENT:
->
-**Status code: 403**
->
 **RESPONSE BODY:**
 
 ```json
@@ -163,9 +136,6 @@ This API does not require authenticity token
 ```
 >
 ### 200 - REQUIRE UPDATE MARKET AGREEMENT:
->
-**Status code: 403**
->
 **RESPONSE BODY:**
 
 ```json
@@ -176,9 +146,6 @@ This API does not require authenticity token
 ```
 >
 ### 200 - MISSING TOS AGREEMENT:
->
-**Status code: 403**
->
 **RESPONSE BODY:**
 
 ```json
@@ -189,9 +156,6 @@ This API does not require authenticity token
 ```
 >
 ### 200 - ACCOUNT SUPPENDED:
->
-**Status code: 403**
->
 **RESPONSE BODY:**
 
 ```json
@@ -202,9 +166,6 @@ This API does not require authenticity token
 ```
 >
 ### 200 - TRIAL ACCOUNT DO NOT SIGNED AGREEMENT:
->
-**Status code: 403**
->
 **RESPONSE BODY:**
 
 ```json
@@ -231,8 +192,6 @@ webfork (optional) | true/false to determine webfork app
 
 ## Get all user emails
 >
-**Status code: 200**
->
 ### 200 SUCCESS RESPONSE:
 **RESPONSE BODY:**<br/>
 *list of user emails*
@@ -258,9 +217,6 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**<br/>
 
 ```json
@@ -278,19 +234,6 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   ]
 }
 ```
->
-### 400 - INVALID MD5 TOKEN
->
-**Status code: 400**
->
-**RESPONSE BODY:**
-
-```json
-{
-  "success": false,
-  "message": "Invalid token"
-}
-```
 
 Get user profile pictures by nicknames
 ### HTTP Request
@@ -303,9 +246,6 @@ nicknames | nicknames for query users, separate by `,`. For example: `user_nickn
 ## Update Password
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -315,10 +255,7 @@ nicknames | nicknames for query users, separate by `,`. For example: `user_nickn
 }
 ```
 >
-### 422 - INVALID:
->
-**Status code: 422**
->
+### 200 - INVALID:
 **RESPONSE BODY:**
 
 ```json
@@ -343,9 +280,6 @@ password_confirmation (required) | User new password confirmation
 ## Reset Password
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -354,10 +288,7 @@ password_confirmation (required) | User new password confirmation
 }
 ```
 >
-### 404 - USER NOT FOUND:
->
-**Status code: 404**
->
+### 200 - USER NOT FOUND:
 **RESPONSE BODY:**
 
 ```json
@@ -368,9 +299,6 @@ password_confirmation (required) | User new password confirmation
 ```
 >
 ### 401 - MISSING EMAIL PARAM:
->
-**Status code: 401**
->
 **RESPONSE BODY:**
 
 ```json
@@ -391,8 +319,6 @@ email (required) | User email which need to be reset
 webfork (optional) | true/false to determine webfork app
 
 ## Update Avatar
->
-**Status code: 200**
 >
 ### 200 SUCCESS RESPONSE:
 **RESPONSE BODY:**
@@ -416,19 +342,13 @@ file (required) | User Avatar file
 ## Get User Setting
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
   "User setting file content."
 ```
 >
-### 404 - CANNOT FIND USER SETTING:
->
-**Status code: 404**
->
+### 500 - CANNOT FIND USER SETTING:
 **RESPONSE BODY:**
 
 ```json
@@ -438,10 +358,7 @@ file (required) | User Avatar file
 }
 ```
 >
-### 400 - CONTENT IS INVALID
->
-**Status code: 400**
->
+### 200 - CONTENT IS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -458,9 +375,6 @@ Update user setting file
 ## Update User Setting
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -470,10 +384,7 @@ Update user setting file
 }
 ```
 >
-### 422 - MISSING/EMPTY FILE:
->
-**Status code: 422**
->
+### 200 - MISSING/EMPTY FILE:
 **RESPONSE BODY:**
 
 ```json
@@ -483,10 +394,7 @@ Update user setting file
 }
 ```
 >
-### 422 - FAIL TO UPLOAD:
->
-**Status code: 422**
->
+### 200 - FAIL TO UPLOAD:
 **RESPONSE BODY:**
 
 ```json
@@ -511,9 +419,6 @@ update_user_settings (Boolean/Optional) | Optional true when we insert setting i
 ## Update User Profile Picture
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -523,16 +428,35 @@ update_user_settings (Boolean/Optional) | Optional true when we insert setting i
 }
 ```
 >
-### 422 - FAIL TO UPLOAD:
->
-**Status code: 422**
->
+### 200 - FAIL TO UPLOAD:
 **RESPONSE BODY:**
 
 ```json
 {
   "success": false,
   "message": "Upload was unsuccessful"
+}
+```
+Get user backup setting file
+### HTTP Request
+`GET http://domain.com/api/users/backup_setting`
+
+## Get User Backup File
+>
+### 200 SUCCESS RESPONSE:
+**RESPONSE BODY:**
+
+```json
+"Json file for backup"
+```
+>
+### 404 FILE NOT FOUND:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Cannot find user backup setting"
 }
 ```
 
@@ -545,41 +469,9 @@ Parameter  | Description
 --------- | -----------
 file (required)| User profile picture
 
-## Get User Backup Setting File
->
-### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
-**RESPONSE BODY:**
-
-```json
-"Json file for backup"
-```
->
-### 404 FILE NOT FOUND:
->
-**Status code: 404**
->
-**RESPONSE BODY:**
-
-```json
-{
-  "success": false,
-  "message": "Cannot find user backup setting"
-}
-```
-
-get user backup setting file
-### HTTP Request
-`GET http://domain.com/api/users/backup_setting`
-
 ## Get User Profile
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**<br/>
 
 ```json
@@ -613,10 +505,7 @@ Get user profile
 
 ## Update User Profile
 >
-### 201 SUCCESS RESPONSE:
->
-**Status code: 201**
->
+### 200 SUCCESS RESPONSE:
 **RESPONSE BODY:**
 
 ```json
@@ -626,10 +515,7 @@ Get user profile
 }
 ```
 >
-### 422 - FAIL TO UPLOAD:
->
-**Status code: 422**
->
+### 200 - FAIL TO UPLOAD:
 **RESPONSE BODY:**
 
 ```json
@@ -640,9 +526,6 @@ Get user profile
 ```
 >
 ### 400 - MISSING PARAMETER
->
-**Status code: 400**
->
 **RESPONSE BODY:**
 
 ```json
@@ -675,9 +558,6 @@ zip_code | user's zip code
 ## Update User security question
 >
 ### 201 SUCCESS RESPONSE:
->
-**Status code: 201**
->
 **RESPONSE BODY:**
 
 ```json
@@ -687,9 +567,6 @@ zip_code | user's zip code
 ```
 >
 ### 400 - INVALID JSON
->
-**Status code: 400**
->
 **RESPONSE BODY:**
 
 ```json
@@ -715,9 +592,6 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ## Get Order
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -750,9 +624,6 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```
 >
 ### 404 - NOT FOUND
->
-**Status code: 404**
->
 **RESPONSE BODY:**
 
 ```json
@@ -778,9 +649,6 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ## Get system message
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -829,9 +697,6 @@ unread_only| If present - Get all message that user has not read
 ## Read Message
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -840,10 +705,7 @@ unread_only| If present - Get all message that user has not read
 }
 ```
 >
-### 404 - NOT FOUND
->
-**Status code: 404**
->
+### 200 - NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -870,9 +732,6 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ## Update Nyse Entry
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -881,10 +740,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 }
 ```
 >
-### 406 - NYSE ENTRY IS COMPLETE ALREADY
->
-**Status code: 406**
->
+### 200 - NYSE ENTRY IS COMPLETE ALREADY
 **RESPONSE BODY:**
 
 ```json
@@ -894,10 +750,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 }
 ```
 >
-### 404 - INVALID NYSE TOKEN
->
-**Status code: 404**
->
+### 200 - INVALID NYSE TOKEN
 **RESPONSE BODY:**
 
 ```json
@@ -907,10 +760,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 }
 ```
 >
-### 422 - PARAMS INVALID
->
-**Status code: 422**
->
+### 200 - PARAMS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -981,9 +831,6 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ## Connected
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -993,10 +840,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 422 - PARAMS INVALID
->
-**Status code: 422**
->
+### 200 - PARAMS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -1006,10 +850,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 400 - INVALID MD5 TOKEN
->
-**Status code: 400**
->
+### 200 - INVALID MD5 TOKEN
 **RESPONSE BODY:**
 
 ```json
@@ -1019,10 +860,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 404 - USER NOT FOUND
->
-**Status code: 404**
->
+### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1050,9 +888,6 @@ product | product user connecting with
 ## Disconnected
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1062,10 +897,7 @@ product | product user connecting with
 }
 ```
 >
-### 422 - PARAMS INVALID
->
-**Status code: 422**
->
+### 200 - PARAMS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -1075,10 +907,7 @@ product | product user connecting with
 }
 ```
 >
-### 400 - INVALID MD5 TOKEN
->
-**Status code: 400**
->
+### 200 - INVALID MD5 TOKEN
 **RESPONSE BODY:**
 
 ```json
@@ -1088,10 +917,7 @@ product | product user connecting with
 }
 ```
 >
-### 404 - USER NOT FOUND
->
-**Status code: 404**
->
+### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1119,9 +945,6 @@ product | product user connecting with
 ## Subscribed
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1131,10 +954,7 @@ product | product user connecting with
 }
 ```
 >
-### 422 - PARAMS INVALID
->
-**Status code: 422**
->
+### 200 - PARAMS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -1144,10 +964,7 @@ product | product user connecting with
 }
 ```
 >
-### 400 - INVALID MD5 TOKEN
->
-**Status code: 400**
->
+### 200 - INVALID MD5 TOKEN
 **RESPONSE BODY:**
 
 ```json
@@ -1157,10 +974,7 @@ product | product user connecting with
 }
 ```
 >
-### 404 - USER NOT FOUND
->
-**Status code: 404**
->
+### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1188,9 +1002,6 @@ product | product user connecting with
 ## Unsubscribed
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1200,10 +1011,7 @@ product | product user connecting with
 }
 ```
 >
-### 422 - PARAMS INVALID
->
-**Status code: 422**
->
+### 200 - PARAMS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -1213,10 +1021,7 @@ product | product user connecting with
 }
 ```
 >
-### 400 - INVALID MD5 TOKEN
->
-**Status code: 400**
->
+### 200 - INVALID MD5 TOKEN
 **RESPONSE BODY:**
 
 ```json
@@ -1226,10 +1031,7 @@ product | product user connecting with
 }
 ```
 >
-### 404 - USER NOT FOUND
->
-**Status code: 404**
->
+### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1262,9 +1064,6 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ## Sign TOS
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1274,10 +1073,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 422 - PARAMS INVALID
->
-**Status code: 422**
->
+### 200 - PARAMS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -1287,10 +1083,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 400 - INVALID MD5 TOKEN
->
-**Status code: 400**
->
+### 200 - INVALID MD5 TOKEN
 **RESPONSE BODY:**
 
 ```json
@@ -1300,10 +1093,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 404 - USER NOT FOUND
->
-**Status code: 404**
->
+### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1332,9 +1122,6 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ## Update Trial Agreement
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1344,10 +1131,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 422 - PARAMS INVALID
->
-**Status code: 422**
->
+### 200 - PARAMS INVALID
 **RESPONSE BODY:**
 
 ```json
@@ -1357,10 +1141,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 400 - INVALID MD5 TOKEN
->
-**Status code: 400**
->
+### 200 - INVALID MD5 TOKEN
 **RESPONSE BODY:**
 
 ```json
@@ -1370,10 +1151,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 404 - USER NOT FOUND
->
-**Status code: 404**
->
+### 200 - USER NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1383,10 +1161,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 }
 ```
 >
-### 422 - MISSING TRIAL_AGREEMENT_ACCEPTED PARAMETER
->
-**Status code: 422**
->
+### 200 - MISSING TRIAL_AGREEMENT_ACCEPTED PARAMETER
 **RESPONSE BODY:**
 
 ```json
@@ -1415,9 +1190,6 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 ## CHECK TOKEN
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1428,10 +1200,7 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 }
 ```
 >
-### 400 - EXPIRED/INVALID RESPONSE
->
-**Status code: 400**
->
+### 200 - EXPIRED/INVALID RESPONSE
 **RESPONSE BODY:**
 
 ```json
@@ -1455,9 +1224,6 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ## Get User Subscriptions
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1523,10 +1289,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ]
 ```
 >
-### 404 - INVALID PLAN CODE
->
-**Status code: 404**
->
+### 200 - INVALID PLAN CODE
 **RESPONSE BODY:**
 
 ```json
@@ -1536,10 +1299,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 }
 ```
 >
-### 404 - PLAN CODE NOT FOUND
->
-**Status code: 404**
->
+### 200 - PLAN CODE NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1561,9 +1321,6 @@ recurly_plan_code (required) | Plan code associated with Product
 ## Get Subscription Addons
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1602,9 +1359,6 @@ recurly_plan_code (required) | Plan code associated with Product
 ```
 >
 ### 500 - ERROR
->
-**Status code: 500**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1618,9 +1372,6 @@ Get user subscriptions
 ## Cancel User Subscriptions
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1629,10 +1380,7 @@ Get user subscriptions
 }
 ```
 >
-### 422 - INVALID UUID
->
-**Status code: 422**
->
+### 200 - INVALID UUID
 **RESPONSE BODY:**
 
 ```json
@@ -1642,10 +1390,7 @@ Get user subscriptions
 }
 ```
 >
-### 422 - SUBSCRIPTION NOT FOUND
->
-**Status code: 422**
->
+### 200 - SUBSCRIPTION NOT FOUND
 **RESPONSE BODY:**
 
 ```json
@@ -1669,11 +1414,7 @@ uuid (required) | Subscription's uuid
 THIS API NOT REQUEST AUTHENTICITY TOKEN 
 </aside>
 >
-
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1683,10 +1424,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 }
 ```
 >
-### 422 - Error
->
-**Status code: 422**
->
+### 200 - Error
 **RESPONSE BODY:**
 
 ```json
@@ -1738,9 +1476,6 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 
 >
 ### 201 SUCCESS RESPONSE: 
->
-**Status code: 201**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1750,9 +1485,6 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 ```
 >
 ### 500 - Internal server error
->
-**Status code: 500**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1762,9 +1494,6 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 ```
 >
 ### 400 - Error when create user
->
-**Status code: 400**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1806,9 +1535,6 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ## List available Addons
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1856,9 +1582,6 @@ List all available addon
 ## Adding Addon
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1868,10 +1591,7 @@ List all available addon
 }
 ```
 >
-### 406 - Addon existed
->
-**Status code: 406**
->
+### 200 - Addon existed
 **RESPONSE BODY:**
 
 ```json
@@ -1881,16 +1601,13 @@ List all available addon
 }
 ```
 >
-### 400 - Addon is not present for user
->
-**Status code: 400**
->
+### 200 - Addon is not present for user
 **RESPONSE BODY:**
 
 ```json
 {
   "success": false,
-  "message": "Add-on is not available"
+  "message": "Failed to add add-on"
 }
 ```
 
@@ -1914,9 +1631,6 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1927,10 +1641,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```
 
 >
-### 422 MISSING PARAM:
->
-**Status code: 422**
->
+### 200 MISSING PARAM:
 **RESPONSE BODY:**
 
 ```json
@@ -1958,9 +1669,6 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 
 >
 ### 200 SUCCESS RESPONSE:
->
-**Status code: 200**
->
 **RESPONSE BODY:**
 
 ```json
@@ -1971,10 +1679,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```
 
 >
-### 422 MISSING PARAM:
->
-**Status code: 422**
->
+### 200 MISSING PARAM:
 **RESPONSE BODY:**
 
 ```json
@@ -1985,10 +1690,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```
 
 >
-### 400 INVALID TOKEN:
->
-**Status code: 400**
->
+### 200 INVALID TOKEN:
 **RESPONSE BODY:**
 
 ```json
