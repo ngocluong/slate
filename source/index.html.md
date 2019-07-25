@@ -71,7 +71,8 @@ This API does not require authenticity token
 ```json
   {
     "success": false,
-    "message": "You need to subscribe in order to log in."
+    "message": "You need to subscribe in order to log in.",
+    "error_code": 4010
   }
 ```
 >
@@ -81,7 +82,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "Subscription expired."
+  "message": "Subscription expired.",
+  "error_code": 4012
 }
 ```
 >
@@ -91,7 +93,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "A confirmation email was sent to your account at [email]. You must follow the instructions in the email before your account can be activated"
+  "message": "A confirmation email was sent to your account at [email]. You must follow the instructions in the email before your account can be activated",
+  "error_code": 4013
 }
 ```
 >
@@ -101,7 +104,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "Invalid login credentials. Please try again."
+  "message": "Invalid login credentials. Please try again.",
+  "error_code": 4014
 }
 ```
 >
@@ -111,7 +115,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "Service is temporarily down for maintenance."
+  "message": "Service is temporarily down for maintenance.",
+  "error_code": 5000
 }
 ```
 >
@@ -121,7 +126,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "This IP address is currently banned for security reasons. Please contact support@stockstotrade.com for more information."
+  "message": "This IP address is currently banned for security reasons. Please contact support@stockstotrade.com for more information.",
+  "error_code": 4015
 }
 ```
 >
@@ -131,7 +137,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "You need to fill out this form before logging in: [URL]"
+  "message": "You need to fill out this form before logging in: [URL]",
+  "error_code": 4031
 }
 ```
 >
@@ -141,7 +148,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "You must update your yearly Market Agreement form to log in: [URL]"
+  "message": "You must update your yearly Market Agreement form to log in: [URL]",
+  "error_code": 4032
 }
 ```
 >
@@ -151,7 +159,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "Missing or false tos agreement"
+  "message": "Missing or false tos agreement",
+  "error_code": 4040
 }
 ```
 >
@@ -161,7 +170,8 @@ This API does not require authenticity token
 ```json
 {
   "success": false,
-  "message": "Your account has been suspended due to Market Compliance inconsistencies. Please contact support."
+  "message": "Your account has been suspended due to Market Compliance inconsistencies. Please contact support.",
+  "error_code": 4033
 }
 ```
 >
@@ -172,7 +182,8 @@ This API does not require authenticity token
 {
   "success": false,
   "trialAgreed": false,
-  "message": "You need to fill out trial Agreement before logging in"
+  "message": "You need to fill out trial Agreement before logging in",
+  "error_code": 4030
 }
 ```
 
@@ -234,6 +245,17 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   ]
 }
 ```
+>
+### 400 - INVALID MD5 TOKEN
+**RESPONSE BODY:**<br/>
+
+```json
+{ 
+  "success": false,
+  "message": "Invalid token",
+  "error_code": 4000
+}
+```
 
 Get user profile pictures by nicknames
 ### HTTP Request
@@ -261,7 +283,8 @@ nicknames | nicknames for query users, separate by `,`. For example: `user_nickn
 ```json
 {
   "success": false,
-  "message": "error message"
+  "message": "error message",
+  "error_code": 4220
 }
 ```
 
@@ -294,7 +317,8 @@ password_confirmation (required) | User new password confirmation
 ```json
 {
   "success": false,
-  "message": "No user found with this email"
+  "message": "No user found with this email",
+  "error_code": 4040
 }
 ```
 >
@@ -304,7 +328,8 @@ password_confirmation (required) | User new password confirmation
 ```json
 {
   "success": false,
-  "message": "You must provide an email address."
+  "message": "You must provide an email address.",
+  "error_code": 4010
 }
 ```
 
@@ -354,7 +379,8 @@ file (required) | User Avatar file
 ```json
 {
   "success": false,
-  "message": "Cannot find user setting"
+  "message": "Cannot find user setting",
+  "error_code": 4040
 }
 ```
 >
@@ -364,7 +390,8 @@ file (required) | User Avatar file
 ```json
 {
   "success": false,
-  "message": "user setting content is invalid"
+  "message": "user setting content is invalid",
+  "error_code": 4000
 }
 ```
 
@@ -390,7 +417,8 @@ Update user setting file
 ```json
 {
   "success": false,
-  "message": "Missing either file or file_content parameter"
+  "message": "Missing either file or file_content parameter",
+  "error_code": 4220
 }
 ```
 >
@@ -400,7 +428,8 @@ Update user setting file
 ```json
 {
   "success": false,
-  "message": "Upload was unsuccessful"
+  "message": "Upload was unsuccessful",
+  "error_code": 4221
 }
 ```
 
@@ -419,6 +448,9 @@ update_user_settings (Boolean/Optional) | Optional true when we insert setting i
 ## Update User Profile Picture
 >
 ### 200 SUCCESS RESPONSE:
+>
+**Status code: 200**
+>
 **RESPONSE BODY:**
 
 ```json
@@ -428,35 +460,17 @@ update_user_settings (Boolean/Optional) | Optional true when we insert setting i
 }
 ```
 >
-### 200 - FAIL TO UPLOAD:
+### 422 - FAIL TO UPLOAD:
+>
+**Status code: 422**
+>
 **RESPONSE BODY:**
 
 ```json
 {
   "success": false,
-  "message": "Upload was unsuccessful"
-}
-```
-Get user backup setting file
-### HTTP Request
-`GET http://domain.com/api/users/backup_setting`
-
-## Get User Backup File
->
-### 200 SUCCESS RESPONSE:
-**RESPONSE BODY:**
-
-```json
-"Json file for backup"
-```
->
-### 404 FILE NOT FOUND:
-**RESPONSE BODY:**
-
-```json
-{
-  "success": false,
-  "message": "Cannot find user backup setting"
+  "message": "Upload was unsuccessful",
+  "error_code": 4220
 }
 ```
 
@@ -468,6 +482,36 @@ Update user Profile picture
 Parameter  | Description
 --------- | -----------
 file (required)| User profile picture
+
+## Get User Backup Setting File
+>
+### 200 SUCCESS RESPONSE:
+>
+**Status code: 200**
+>
+**RESPONSE BODY:**
+
+```json
+"Json file for backup"
+```
+>
+### 404 FILE NOT FOUND:
+>
+**Status code: 404**
+>
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Cannot find user backup setting",
+  "error_code": 4040
+}
+```
+
+get user backup setting file
+### HTTP Request
+`GET http://domain.com/api/users/backup_setting`
 
 ## Get User Profile
 >
@@ -521,7 +565,8 @@ Get user profile
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message",
+  "error_code": 4220
 }
 ```
 >
@@ -531,7 +576,8 @@ Get user profile
 ```json
 {
   "success": false,
-  "message": "[field] cannot be blank"
+  "message": "[field] cannot be blank",
+  "error_code": 4000
 }
 ```
 Update user Profile
@@ -572,7 +618,8 @@ zip_code | user's zip code
 ```json
 {
   "success": false,
-  "message": "Invalid json data"
+  "message": "Invalid json data",
+  "error_code": 4000
 }
 ```
 Update user Profile
@@ -628,7 +675,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 
 ```json
 {
-  "message": "Unable to find resource"
+  "message": "Unable to find resource", 
+  "error_code": 4040
 }
 ```
 
@@ -711,7 +759,8 @@ unread_only| If present - Get all message that user has not read
 ```json
 {
   "success": false,
-  "message": "Cannot find message with id [id]"
+  "message": "Cannot find message with id [id]",
+  "error_code": 4040
 }
 ```
 
@@ -746,7 +795,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
 {
   "success": false,
-  "message": "User's nyse entry is completed"
+  "message": "User's nyse entry is completed",
+  "error_code": 4060
 }
 ```
 >
@@ -756,7 +806,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
 {
   "success": false,
-  "message": "Invalid nyse token"
+  "message": "Invalid nyse token",
+  "error_code": 4040
 }
 ```
 >
@@ -766,7 +817,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message",
+  "error_code": 4220
 }
 ```
 
@@ -846,7 +898,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message",
+  "error_code": 4220
 }
 ```
 >
@@ -856,7 +909,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Invalid token"
+  "message": "Invalid token", 
+  "error_code": 4000
 }
 ```
 >
@@ -866,7 +920,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Email address was not found"
+  "message": "Email address was not found OR missing user email or device id",
+  "error_code": 4040
 }
 ```
 
@@ -903,7 +958,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message",
+  "error_code": 4220
 }
 ```
 >
@@ -913,7 +969,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Invalid token"
+  "message": "Invalid token",
+  "error_code": 4000
 }
 ```
 >
@@ -923,7 +980,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Email address was not found"
+  "message": "Email address was not found OR missing user email or device id",
+  "error_code": 4040
 }
 ```
 
@@ -960,7 +1018,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message",
+  "error_code": 4220
 }
 ```
 >
@@ -970,7 +1029,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Invalid token"
+  "message": "Invalid token",
+  "error_code": 4000
 }
 ```
 >
@@ -980,7 +1040,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Email address was not found"
+  "message": "Email address was not found OR missing user email or device id",
+  "error_code": 4040
 }
 ```
 
@@ -1017,7 +1078,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message",
+  "error_code": 4220
 }
 ```
 >
@@ -1027,7 +1089,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Invalid token"
+  "message": "Invalid token",
+  "error_code": 4000
 }
 ```
 >
@@ -1037,7 +1100,8 @@ product | product user connecting with
 ```json
 {
   "success": false,
-  "message": "Email address was not found"
+  "message": "Email address was not found OR missing user email or device id",
+  "error_code": 4040
 }
 ```
 
@@ -1079,7 +1143,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message", 
+  "error_code": 4220
 }
 ```
 >
@@ -1089,7 +1154,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Invalid token"
+  "message": "Invalid token", 
+  "error_code": 4000
 }
 ```
 >
@@ -1099,7 +1165,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Email address was not found"
+  "message": "Email address was not found",
+  "error_code": 4040
 }
 ```
 
@@ -1137,7 +1204,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Error message"
+  "message": "Error message",
+  "error_code": 4221
 }
 ```
 >
@@ -1147,7 +1215,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Invalid token"
+  "message": "Invalid token",
+  "error_code": 4000
 }
 ```
 >
@@ -1157,7 +1226,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Email address was not found"
+  "message": "Email address was not found",
+  "error_code": 4040
 }
 ```
 >
@@ -1167,7 +1237,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": "Missing trial_agreement_accepted param"
+  "message": "Missing trial_agreement_accepted param",
+  "error_code": 4220
 }
 ```
 
@@ -1206,7 +1277,8 @@ REMEMBER -- THIS API REQUEST AUTHENTICITY TOKEN AND CHECK BASED ON THESE TOKEN
 ```json
 {
     "success": false,
-    "message": "Invalid or expired tokens"
+    "message": "Invalid or expired tokens",
+    "error_code": 4000
 }
 ```
 
@@ -1295,7 +1367,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
 {
   "success": false,
-  "message": "Invalid recurly plan code"
+  "message": "Invalid recurly plan code",
+  "error_code": 4040
 }
 ```
 >
@@ -1305,7 +1378,8 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
 {
   "success": false,
-  "message": "No product found with input plan code"
+  "message": "No product found with input plan code",
+  "error_code": 4040
 }
 ```
 
@@ -1386,7 +1460,8 @@ Get user subscriptions
 ```json
 {
   "success": false,
-  "message": "Invalid uuid"
+  "message": "Invalid uuid",
+  "error_code": 4220
 }
 ```
 >
@@ -1396,7 +1471,8 @@ Get user subscriptions
 ```json
 {
   "success": false,
-  "message": "Subscription not found with input uuid"
+  "message": "Subscription not found with input uuid",
+  "error_code": 4220
 }
 ```
 
@@ -1424,13 +1500,46 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 }
 ```
 >
-### 200 - Error
+### 200 - Error when subscribe to a plan
 **RESPONSE BODY:**
 
 ```json
 { 
   "msg": "Error message",
   "status": 200 
+}
+```
+>
+### 200 - account is associated to other
+**RESPONSE BODY:**
+
+```json
+{ 
+  "success": false,
+  "message": "There is already an active subscription associated with this email address, please check your original receipt or use another email address.",
+  "error_code": 4000 
+}
+```
+>
+### 200 - invalid recurly plan code
+**RESPONSE BODY:**
+
+```json
+{ 
+  "success": false,
+  "message": 'Invalid recurly_plan_code',
+  "error_code": 4040
+}
+```
+>
+### 200 - error when create recurly account
+**RESPONSE BODY:**
+
+```json
+{ 
+  "success": false,
+  "message": 'error message',
+  "error_code": 4220
 }
 ```
 
@@ -1489,7 +1598,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 
 ```json
 { 
-  "error": "Error message" 
+  "error": "Error message",
+  "error_code": 5000 
 }
 ```
 >
@@ -1498,7 +1608,8 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN
 
 ```json
 { 
-  "error": "Error message" 
+  "error": "Error message",
+  "error_code": 4220
 }
 ```
 
@@ -1597,7 +1708,8 @@ List all available addon
 ```json
 {
   "success": false,
-  "message": "Add-on existed"
+  "message": "Add-on existed",
+  "error_code": 4060
 }
 ```
 >
@@ -1607,7 +1719,19 @@ List all available addon
 ```json
 {
   "success": false,
-  "message": "Failed to add add-on"
+  "message": "Add-on is not available",
+  "error_code": 4000
+}
+```
+>
+### 200 - Problem with billing address
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "There is a billing problem with a previous purchase. Please edit your billing info to correct the problem.",
+  "error_code": 4240
 }
 ```
 
@@ -1636,7 +1760,7 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
 {
   "success": true,
-  "message": 'User log uploaded'
+  "message": "User log uploaded"
 }
 ```
 
@@ -1647,7 +1771,20 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 ```json
 {
   "success": false,
-  "message": 'Missing file_content parameter'
+  "message": "Missing file_content parameter",
+  "error_code": 4221
+}
+```
+
+>
+### 200 UPLOAD UNSUCCESSFUL:
+**RESPONSE BODY:**
+
+```json
+{
+  "success": false,
+  "message": "Upload was unsuccessful",
+  "error_code": 4220
 }
 ```
 
@@ -1674,7 +1811,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": true,
-  "message": 'User log uploaded'
+  "message": "User log uploaded"
 }
 ```
 
@@ -1685,7 +1822,8 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 ```json
 {
   "success": false,
-  "message": 'Missing file_content parameter'
+  "message": "Missing file_content parameter",
+  "error_code": 4220
 }
 ```
 
