@@ -782,16 +782,6 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4040</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<blockquote>
-<h3 id='200-content-is-invalid'>200 - CONTENT IS INVALID</h3>
-<p><strong>RESPONSE BODY:</strong></p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user setting content is invalid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <p>Update user setting file</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/setting</code></p>
@@ -813,6 +803,16 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Missing either file or file_content parameter"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4220</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='200-content-is-invalid'>200 - CONTENT IS INVALID</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user setting content is invalid"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
