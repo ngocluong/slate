@@ -844,11 +844,15 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <td>Required if leave file param blank. content of user setting file</td>
 </tr>
 <tr>
+<td>file_name</td>
+<td>Optional this is the name of the file (without <code>.ini</code> at the end since it will insert automatically). Leave blank if you want update user setting file (global file)</td>
+</tr>
+<tr>
 <td>force_upload (Boolean/Optional)</td>
 <td>Optional true when force upload file content</td>
 </tr>
 <tr>
-<td>update_user_settings (Boolean/Optional)</td>
+<td>backup (Boolean/Optional)</td>
 <td>Optional true when we insert setting into backup for tracking</td>
 </tr>
 </tbody></table>
@@ -915,6 +919,18 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <p>get user backup setting file</p>
 <h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/backup_setting</code></p>
+<h3 id='body-parameters-7'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file_name (optional)</td>
+<td>User setting file name. If leave blank will get user setting (global) file</td>
+</tr>
+</tbody></table>
 <h2 id='get-user-profile'>Get User Profile</h2>
 <blockquote>
 <h3 id='200-success-response-11'>200 SUCCESS RESPONSE:</h3>
@@ -980,7 +996,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <p>Update user Profile</p>
 <h3 id='http-request-12'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users</code></p>
-<h3 id='body-parameters-7'>Body Parameters</h3>
+<h3 id='body-parameters-8'>Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1062,7 +1078,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <p>Update user Profile</p>
 <h3 id='http-request-13'>HTTP Request</h3>
 <p><code>PUT http://domain.com/api/users/security_question</code></p>
-<h3 id='body-parameters-8'>Body Parameters</h3>
+<h3 id='body-parameters-9'>Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
