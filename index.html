@@ -782,9 +782,21 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4040</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Update user setting file</p>
+<p>Get user setting file</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/setting</code></p>
+<h3 id='body-parameters-5'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file_name (optional)</td>
+<td>User setting file name. If leave blank will get user setting (global) file</td>
+</tr>
+</tbody></table>
 <h2 id='update-user-setting'>Update User Setting</h2>
 <blockquote>
 <h3 id='200-success-response-8'>200 SUCCESS RESPONSE:</h3>
@@ -828,7 +840,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <p>Update user setting file</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/users/update_setting</code></p>
-<h3 id='body-parameters-5'>Body Parameters</h3>
+<h3 id='body-parameters-6'>Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -883,7 +895,7 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <p>Update user Profile picture</p>
 <h3 id='http-request-9'>HTTP Request</h3>
 <p><code>POST http://domain.com/api/users/update_profile_picture</code></p>
-<h3 id='body-parameters-6'>Body Parameters</h3>
+<h3 id='body-parameters-7'>Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -919,18 +931,6 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <p>get user backup setting file</p>
 <h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET http://domain.com/api/users/backup_setting</code></p>
-<h3 id='body-parameters-7'>Body Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>file_name (optional)</td>
-<td>User setting file name. If leave blank will get user setting (global) file</td>
-</tr>
-</tbody></table>
 <h2 id='get-user-profile'>Get User Profile</h2>
 <blockquote>
 <h3 id='200-success-response-11'>200 SUCCESS RESPONSE:</h3>
