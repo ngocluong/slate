@@ -386,6 +386,17 @@
               </ul>
           </li>
           <li>
+            <a href="#addon-user-sms-notifications" class="toc-h1 toc-link" data-title="Addon User SMS Notifications">Addon User SMS Notifications</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-notification-based-on-addon-map-code" class="toc-h2 toc-link" data-title="List Notification based on Addon map code">List Notification based on Addon map code</a>
+                  </li>
+                  <li>
+                    <a href="#adding-addon-user-sms-notification" class="toc-h2 toc-link" data-title="Adding addon user sms notification">Adding addon user sms notification</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -952,12 +963,23 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
   </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">avatar</span><span class="p">],</span><span class="w">
   </span><span class="s2">"twitter_screenname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">twitter_screenname</span><span class="p">],</span><span class="w">
   </span><span class="s2">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">nickname</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sms_number"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">sms_numer</span><span class="p">],</span><span class="w">
   </span><span class="s2">"tos_agreement"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">tos_agreement</span><span class="p">],</span><span class="w">
   </span><span class="s2">"tos_agreement_date"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">tos_agreement_date</span><span class="p">],</span><span class="w">
   </span><span class="s2">"is_pro"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">is_pro(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">],</span><span class="w">
   </span><span class="s2">"available_addons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">list_of_addons</span><span class="p">],</span><span class="w">
   </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">list_of_plan_codes</span><span class="p">],</span><span class="w">
   </span><span class="s2">"trial_user"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">trial_user(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"addon_user_sms_notifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"addon_mapping"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">addon_mapping_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notification_enabled"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">notification_enabled(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"addon_mapping"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">addon_mapping_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"notification_enabled"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">notification_enabled(</span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="err">)</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="s2">"plan_mapping"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"trial_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">nasdaq_ls/utp/BATS</span><span class="p">],</span><span class="w">
     </span><span class="s2">"subscription_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">nasdaq_ls/utp/BATS</span><span class="p">],</span><span class="w">
@@ -1038,6 +1060,10 @@ THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <tr>
 <td>state</td>
 <td>user&#39;s state</td>
+</tr>
+<tr>
+<td>sms_number</td>
+<td>user&#39;s sms_number</td>
 </tr>
 <tr>
 <td>twitter_screenname</td>
@@ -2568,6 +2594,100 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 <tr>
 <td>token (required)</td>
 <td>MD5 of date</td>
+</tr>
+</tbody></table>
+<h1 id='addon-user-sms-notifications'>Addon User SMS Notifications</h1>
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+<h2 id='list-notification-based-on-addon-map-code'>List Notification based on Addon map code</h2>
+<blockquote>
+<h3 id='200-success-response-32'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addon_user_sms_notification"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_id_</span><span class="mi">1</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"user_sms_number"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_sms_number</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_id_</span><span class="mi">2</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"user_sms_number"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_sms_number_</span><span class="mi">2</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='200-addon-is-not-existed'>200 - Addon is not existed</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Addon mapping is not present"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>all user have notification enabled based on addon mapping</p>
+<h3 id='http-request-34'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/sms_notifications</code></p>
+<h3 id='parameters-19'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>addon_mapping (required)</td>
+<td>addon mapping code</td>
+</tr>
+<tr>
+<td>token (required)</td>
+<td>MD5 of date</td>
+</tr>
+</tbody></table>
+<h2 id='adding-addon-user-sms-notification'>Adding addon user sms notification</h2>
+<blockquote>
+<h3 id='200-success-response-33'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<h3 id='example-of-request'>Example of request</h3>
+<p><strong>Json Request:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"sms_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0909891252"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addon_user_sms_notifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"addon_mapping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_enabled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"addon_mapping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"notification_enabled"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Add/update addon user sms notification</p>
+<h3 id='http-request-35'>HTTP Request</h3>
+<p><code>PUT http://domain.com/api/sms_notifications</code></p>
+<h3 id='parameters-20'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sms_number (option)</td>
+<td>user sms number if user want to update a number</td>
+</tr>
+<tr>
+<td>addon_user_sms_notifications (option)</td>
+<td>array of addon_mapping and notification_enabled for create/update</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
