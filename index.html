@@ -397,6 +397,14 @@
               </ul>
           </li>
           <li>
+            <a href="#newsletter" class="toc-h1 toc-link" data-title="Newsletter">Newsletter</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-users-information-based-on-newsletter" class="toc-h2 toc-link" data-title="Get users information based on newsletter">Get users information based on newsletter</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -2697,6 +2705,35 @@ REMEMBER -- Send your request with your authenticity token <a href="#authenticat
 <td>array of addon_mapping and notification_enabled for create/update</td>
 </tr>
 </tbody></table>
+<h1 id='newsletter'>Newsletter</h1>
+<aside class="success">
+REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE 
+</aside>
+<h2 id='get-users-information-based-on-newsletter'>Get users information based on newsletter</h2>
+<blockquote>
+<h3 id='200-success-response-34'>200 SUCCESS RESPONSE:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"product_code"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">newsletter_unique_code</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"smsable_users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_phone_number</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">user_email</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='200-newsletter-not-found'>200 - NEWSLETTER NOT FOUND:</h3>
+<p><strong>RESPONSE BODY:</strong></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No newsletter found with input unique_identifier"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4040</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get users information based on newsletter</p>
+<h3 id='http-request-36'>HTTP Request</h3>
+<p><code>GET http://domain.com/api/newsletters/[news_letter_unique_code]</code></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
