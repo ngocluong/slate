@@ -2723,8 +2723,11 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='200-newsletter-not-found'>200 - NEWSLETTER NOT FOUND:</h3>
+</span></code></pre>
+<blockquote>
+<h3 id='200-newsletter-not-found'>200 - NEWSLETTER NOT FOUND:</h3>
 <p><strong>RESPONSE BODY:</strong></p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No newsletter found with input unique_identifier"</span><span class="p">,</span><span class="w">
@@ -2733,7 +2736,7 @@ REMEMBER -- THIS API NOT REQUEST AUTHENTICITY TOKEN. BUT NEED MD5 HASH OF DATE
 </span></code></pre>
 <p>Get users information based on newsletter</p>
 <h3 id='http-request-36'>HTTP Request</h3>
-<p><code>GET http://domain.com/api/newsletters/[news_letter_unique_code]</code></p>
+<p><code>GET http://domain.com/api/newsletters/[newsletter_unique_code]</code></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
